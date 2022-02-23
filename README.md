@@ -41,8 +41,10 @@ console.log(obj)
 	+ inputDictionary : Choose dictionary ,,,,,,,
 + подкорректировать print() там где просто написано [0-num] ghbdzpfnm 'nj r lkbyyt vfccbdf'
 + печататьть числа по размерам
-https://www.delftstack.com/howto/python/python-clear-console/
++ clear console - https://www.delftstack.com/howto/python/python-clear-console/
++ [VERY inportant] to know how to change the version of the project and how to name this version for exfmple "Repeating And Writing Is working"
 
+## GITHUB
 ## Github push
 
 <!--+ git clone https://github.com/ValikProgrammer/LearnWords   -->
@@ -57,7 +59,82 @@ https://www.delftstack.com/howto/python/python-clear-console/
     + username
     + token
 
+### Sumoory
 
+## tutorial of github 
++ SOURCE : https://itproger.com/course/git/
+### git config
+-- global это глабально , если ничего не писать то быдет локально
+```bash
+
+~ ❯ git config --global user.name ValikProgrammer                                                                 17:09:54
+~ ❯ git config --global user.email ValikProgrammer@gmail.com                                                      17:10:34
+~ ❯ git config user.name                                                                                          17:11:04
+ValikProgrammer
+~ ❯ git config user.email                                                                                         17:11:15
+ValikProgrammer@gmail.com
+~ ❯     
+
+```
+### .gitignore
++ add file .gitignore and write files that will be ignored in git add command
+```
+moNotes.md
+*.txt
+folder/ - игнорирование всей дирректории
+```
+
+
+### commands
+#### working with files
++ git add - добавление файлов в стадию ожидания;
+    + чтоб добавить сразу все пиши git add . или git add -A
+    + что добавить файлы с определенным разрешением fit add *.html
++ git rm - отмена действий.
+    + -cached "file"
+
+#### Versions
++ git log --oneline - получить список всех коммитов
++ git checkout [id] - посмотреть проект на стадии кокого -то комита
+
++ git revert id - отменить коммит
++ git reset id --hard - удалить коммит
+
+#### Branches
++ git branch [name] - create a branch
++ git checkout [name] - switch to branch with 
+    + git checkout master - switch to main branch
+
+#### Working with remove repository
++ git remote add origin [url] - связываем локальныйф репозиторий с удаленным
++ git push [имя удаленного репозитория] [branch name]
+    + git push origin master
+
++ git pull [имя удаленного репозитория] [branch name] - information about changes
+    + git pull origin master
+
++  git clone [url] - clone repository
+#### Other
++ git status - get status
++ git commit - добавление файлов в локальное хранилище
+    + -m "comment"
+
+
+
+##### USUAL Set
+
+<!--+ git clone https://github.com/ValikProgrammer/LearnWords   -->
++ git pull (very important - to get changes from github)
++ git add . 
++ git commit
+    + to the end of the file
+    + press ctrl+O (letter "o")
+    + press enter
+    + press ctrl+x
++ git push
+    + username
+    + tocken
+    + 
 ### SOURCES
 colourful text - https://habr.com/ru/post/119436/
 another wariant to get colored text
