@@ -33,9 +33,25 @@ console.log("+++++++++++++++++++++++++")
 console.log(obj)
 # 
 ```
+## To Do
++ создать обьект с принтами там будет ключи и значения Напримр
+	+ inputDictionary : Choose dictionary ,,,,,,,
++ подкорректировать print() там где просто написано [0-num] ghbdzpfnm 'nj r lkbyyt vfccbdf'
++ печататьть числа по размерам
 
+## Github push
 
-
+<!--+ git clone https://github.com/ValikProgrammer/LearnWords   -->
++ git pull (very important - to get changes from github)
++ git add . 
++ git commit
+    + to the end of the file
+    + press ctrl+O (letter "o")
+    + press enter
+    + press ctrl+x
++ git push
+    + username
+    + token
 
 
 ### SOURCES
