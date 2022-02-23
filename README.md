@@ -42,7 +42,7 @@ console.log(obj)
 + подкорректировать print() там где просто написано [0-num] ghbdzpfnm 'nj r lkbyyt vfccbdf'
 + печататьть числа по размерам
 + clear console - https://www.delftstack.com/howto/python/python-clear-console/
-+ [VERY inportant] to know how to change the version of the project and how to name this version for exfmple "Repeating And Writing Is working"
++ [***VERY inportant***] to know how to change the version of the project and how to name this version for exfmple "Repeating And Writing Is working"
 
 ## GITHUB
 ## Github push
