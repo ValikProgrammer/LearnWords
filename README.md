@@ -1,5 +1,4 @@
 # Get started
-# blblblblblblblblblblbl
 ```bash
 git clone https://github.com/ValikProgrammer/LearnWords
 cd LearnWords
