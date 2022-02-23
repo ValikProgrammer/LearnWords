@@ -2,6 +2,15 @@
 # width and hiegth  must be the same (так расчитано)
 # width & hiegth of digits = 5 
 # width & hiegth of % = 7 
+class colors:
+    RED = '\033[31m' # red
+    GREEN = '\033[32m' # green
+    ORANGE = '\033[32m'#'\033[33m' # orange
+    BLUE = '\033[35m' # blue
+    UNDERLINED = '\033[4m'
+    BOLD = '\033[1m'
+    END = '\033[0m' # simple text (stop colourful text)
+
 def getResult(SCORE):
     # ======CONSTANTS==========
     SCORE = str(SCORE)
@@ -109,15 +118,6 @@ def getResult(SCORE):
             "/   ###",
         ],
     }
-
-    class colors:
-        RED = '\033[31m' # red
-        GREEN = '\033[32m' # green
-        ORANGE = '\033[32m'#'\033[33m' # orange
-        BLUE = '\033[35m' # blue
-        UNDERLINED = '\033[4m'
-        BOLD = '\033[1m'
-        END = '\033[0m' # simple text (stop colourful text)
 
 
 
