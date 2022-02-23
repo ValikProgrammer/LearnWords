@@ -1,4 +1,9 @@
-
+# Get started
+```bash
+git clone https://github.com/ValikProgrammer/LearnWords
+cd LearnWords
+python3 main.py
+```
 # APP LEARN WORDS
 - this programm was made to help you learn irregular verbs
 YOU CAN ENTER DATA DIFFERENT:
