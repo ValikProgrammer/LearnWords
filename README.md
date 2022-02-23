@@ -41,6 +41,7 @@ console.log(obj)
 	+ inputDictionary : Choose dictionary ,,,,,,,
 + подкорректировать print() там где просто написано [0-num] ghbdzpfnm 'nj r lkbyyt vfccbdf'
 + печататьть числа по размерам
+https://www.delftstack.com/howto/python/python-clear-console/
 
 ## Github push
 
