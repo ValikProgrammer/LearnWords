@@ -6,4 +6,5 @@ def getDictionary() :
       "Are you ok[1/2]?" : "1",
       "casasca" : "scascasc",
       "ascascasc" : "ascascac",
+      "dcscsdc" : "sdcsdcsdcds",
     }

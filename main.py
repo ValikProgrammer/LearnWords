@@ -14,6 +14,7 @@ PATH = os.getcwd() # path to main.py
 # add all folders to the system path
 path, dirs, files = next(os.walk(PATH))
 for i in range (0,len(dirs)):
+    print(f"I added : {i}.{dirs[i]}")
     sys.path.insert(i, dirs[i])
 
 

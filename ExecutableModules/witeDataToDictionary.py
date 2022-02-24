@@ -29,6 +29,9 @@ def chooseDictionary(arrDictionaries=arrDictionaries):
 
 
 def writeData(dict,data,pathToFolderWithDictionaries=pathToFolderWithDictionaries):
+  PATH = os.getcwd()
+  print("🚀 ~ file: writeData.py ~ line 10 ~ PATH", PATH)
+
   fullPath = pathToFolderWithDictionaries+"/"+dict+".py"
 
   with open(fullPath, 'r', encoding='utf-8') as file: 
