@@ -155,21 +155,22 @@ def getResult(SCORE):
 
 
     console = []
-
-    def getSpaces(l) :
-        s = ""
-        for j in range(0,l):
-            s += " "
-        return s
-
+    MASSAGE = "Score: "
     # append lines to the result output (amount of lines == anotherCharSize)
     for i in range (0,max(anotherCharSize,standartCharSize)):
-        console.append("")
+        console.append(" "*len(MASSAGE))
 
 
     # print("==============================================================================")
 
     # print digits in standar size lines
+
+    # lenOfRavno = len(resultArr[0])+len(massageScore)
+    
+
+
+    # print("="*lenOfRavno)
+
     for digit in (SCORE):
         for i in range ( 0,standartCharSize):
             console[i+indexToStartPrintingStandartCharSize] += (SYMBOLS[digit][i] + SEPERATOR)
@@ -178,19 +179,21 @@ def getResult(SCORE):
     for i in range (0,len(console)):
         # put spaces where neccssary (where was not digits)
         if (i < indexToStartPrintingStandartCharSize or i >= indexToEndPrintingStandartCharSize ):
-            console[i] += getSpaces(standartCharSizeWithSEPERATOR*degitsAmount)
+            console[i] += " "*(standartCharSizeWithSEPERATOR*degitsAmount)
         try:
             console[i] += (SYMBOLS["%"][i])
         except:
             continue
+    # insert massage to the center ("Score: ")
+    middle = len(console)//2
+    copy = console[middle]
+    console[middle] =  MASSAGE+copy[len(MASSAGE):] # copy[len(MASSAGE):] - in copy we have spaces and with this способ we delete them
 
-
-
-    # print result (console)
-    # for i in console:
-    #     print(f"{colors.BOLD}{colors.BLUE}{i}")
-    # print(f"{colors.END}==============================================================================")
-
+    # ravnoAmount = len(console[0])
+    # console.insert(0,("="*ravnoAmount))
+    # console.append(("="*ravnoAmount))
+    console.insert(0," ")
+    console.append(" ")
     return console
 
 

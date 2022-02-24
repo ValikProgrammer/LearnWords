@@ -2,8 +2,11 @@ import os
 import sys
 import random
 
-CONSTANTS_FILE_NAME = "CONSTANTS.py"
-CONSTANTS = __import__(CONSTANTS_FILE_NAME[:-3])
+from CONSTANTS import *
+# CONSTANTS_FILE_NAME = "CONSTANTS.py"
+# CONSTANTS = __import__(CONSTANTS_FILE_NAME[:-3])
+
+
 
 # class CONSTANTS.CONSTANTS.CONSTANTS.colors:
 #   INCORRECT = '\033[31m' # red
@@ -18,27 +21,33 @@ CONSTANTS = __import__(CONSTANTS_FILE_NAME[:-3])
 # CONSTANTS.DICTIONARIES_PATH = "dictionaries"
 # path = os.getcwd()
 
-blaBla, dirs, arrDictionaries = next(os.walk(CONSTANTS.PATH+"/"+CONSTANTS.DICTIONARIES_PATH))
+blaBla, dirs, arrDictionaries = next(os.walk(PATH+"/"+DICTIONARIES_PATH))
 # sys.path.insert(0, pathToCONSTANTS.DICTIONARIES_PATH)
 
 arrOptions = [ # options for servey at the end of the dictionary
-  "Continue working with this dictionary",
-  "Choose another dictionary",
-  "STOP and EXIT"
+
 ] 
 
 
 # #===========FUNCTIONS==================
 # ##======STARTING SMTH==================
 def newDictionary(arrDictionaries=arrDictionaries):
-  print("\nAvailable Dictionaries : ")
-  for i in range(0,len(arrDictionaries)) :
-    print(f"\t[{CONSTANTS.WARNING}{i}{CONSTANTS.END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
-  num = int(input(f"\nChoose the dictionary. Press the number[{CONSTANTS.WARNING}0{CONSTANTS.END}-{CONSTANTS.WARNING}{len(arrDictionaries)-1}{CONSTANTS.END}]: "))
- 
+  PRINT_MASSAGE(FILE="REPEATE",NAME="NEW_DICTIONARY_HEADER")
+  PRINT_MASSAGE(FILE="TEMPLATES",NAME="DICTIONARIES_PRINTING",DATA=arrDictionaries)
+  arrLen = len(arrDictionaries) -1
+  # print(f"\n\n{INCORRECT}need = len(arrDictionaries) -1 {need}")
+  PRINT_MASSAGE(FILE="TEMPLATES",NAME="CHOSE",DATA=[arrLen])
+  # for i in range(0,len(arrDictionaries)) :
+  #   print(f"\t[{WARNING}{i}{END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
+  
+
+  # num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: "))
+  num = int(input())
   module = __import__(arrDictionaries[num][:-3])
   dictionary =  module.getDictionary()
   
+
+
   return dictionary
 
 def newLoop (dictionary) :
@@ -46,7 +55,10 @@ def newLoop (dictionary) :
   arrNumbers = list(range(len(keys))) # 0 , 1, 2 ..   jsut get numbers from 0 to len(keys) 
   arrNumbersRandomSorted = random.sample(arrNumbers, len(arrNumbers)) # 0 , 2 , 1 ...
   i = mistakesBLUE = 0
-  print(f"Amount of all words:{CONSTANTS.BLUE}{len(keys)}{CONSTANTS.END}") 
+  # print(f"Amount of all words:{BLUE}{len(keys)}{END}") 
+  arrLen = len(keys) -1
+  # print(f"\n\n{INCORRECT}need = len(keys) -1 {need}")
+  PRINT_MASSAGE(FILE="REPEATE",NAME="AMOUNT",DATA=[arrLen])
   return [i , mistakesBLUE , keys  , arrNumbersRandomSorted]
 # ##======MAIN WORK==================
 def charThatNotEquals (s1,s2) :
@@ -70,7 +82,7 @@ def charThatNotEquals (s1,s2) :
   return ''.join(arr) 
 
 def compare (programmTranslation,userTranslation):
-  if programmTranslation == userTranslation: return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
+  if programmTranslation == userTranslation: return f"{CORRECT}[OK]{END} : {WARNING}{programmTranslation}{END}"
 
   arrUserTranslation = userTranslation.split(' ')
   arrProgrammTranslation = programmTranslation.split(' ')
@@ -79,45 +91,47 @@ def compare (programmTranslation,userTranslation):
       # if 3 forms of the verb is the same
       if(arrProgrammTranslation[0] == arrProgrammTranslation[1] == arrProgrammTranslation[2]):  
           if(arrUserTranslation[1] == arrUserTranslation[2] == "="  or "."):
-            return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
+            return f"{CORRECT}[OK]{END} : {WARNING}{programmTranslation}{END}"
       # if 1 from different and 2from == 3form 
       if (arrProgrammTranslation[1] == arrProgrammTranslation[2]):
         if(arrUserTranslation[1] == arrProgrammTranslation[1]):
           if(arrUserTranslation[2] == "=" or "."):
-            return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
+            return f"{CORRECT}[OK]{END} : {WARNING}{programmTranslation}{END}"
       # if 3 forms all different
       if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[1]) == arrUserTranslation[1] or arrProgrammTranslation[1] == arrUserTranslation[1]):
         if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[2]) == arrUserTranslation[2] or arrProgrammTranslation[2] == arrUserTranslation[2]):
-          return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
-  #return f"{CONSTANTS.INCORRECT}[ERROR]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
-  return f"{CONSTANTS.INCORRECT}[ERROR]{CONSTANTS.END} : {CONSTANTS.INCORRECT}{programmTranslation}{CONSTANTS.END}"
+          return f"{CORRECT}[OK]{END} : {WARNING}{programmTranslation}{END}"
+  #return f"{INCORRECT}[ERROR]{END} : {WARNING}{programmTranslation}{END}"
+  return f"{INCORRECT}[ERROR]{END} : {INCORRECT}{programmTranslation}{END}"
 
 def showResult(i,m):
-  # print(f"========RESULT={CONSTANTS.BLUE}{round(( (i-m)/i )*100)}{CONSTANTS.END}%========")
+  # print(f"========RESULT={CONSTANTS.BLUE}{round(( (i-m)/i )*100)}{END}%========")
+  score = round(( (i-m)/i )*100)
+
+  moduleResultPrinting = (__import__(PRINT_RESULT_SCRIPT_PATH[:-3]))
+  console = moduleResultPrinting.getResult(score)
+  # massageScore = "Score: "
+  # lenOfRavno = len(resultArr[0])+len(massageScore)
+  # middle = len(resultArr)//2
+
+
   
-  moduleResultPrinting = (__import__(CONSTANTS.PRINT_RESULT_SCRIPT_PATH[:-3]))
-  SCORE = round(( (i-m)/i )*100)
-  resultArr = moduleResultPrinting.getResult(SCORE)
-  massageScore = "Score: "
-  lenOfRavno = len(resultArr[0])+len(massageScore)
-  middle = len(resultArr)//2
 
+  # for j in range (0,len(resultArr)):
+  #   copy_line = resultArr[j]
+  #   if(j == middle):
+  #     resultArr[middle] = massageScore + copy_line 
+  #   else :
+  #     # print(f"te{' '*len(massageScore)}te")
+  #     resultArr[j] = str(" "*(len(massageScore)) ) + copy_line
+  #   print(f"{CONSTANTS.BOLD}{CONSTANTS.BLUE}{resultArr[j]}")
+  PRINT_MASSAGE(FILE="REPEATE",NAME="RESULT",DATA=console)
+  # PRINT_MASSAGE(FILE="REPEATE",NAME="STATISTICS",DATA=[i],NUM=[m])
 
-  print("="*lenOfRavno)
-
-  for j in range (0,len(resultArr)):
-    copy_line = resultArr[j]
-    if(j == middle):
-      resultArr[middle] = massageScore + copy_line 
-    else :
-      # print(f"te{' '*len(massageScore)}te")
-      resultArr[j] = str(" "*(len(massageScore)) ) + copy_line
-    print(f"{CONSTANTS.BOLD}{CONSTANTS.BLUE}{resultArr[j]}")
-
-  print(f"{CONSTANTS.END}{'='*lenOfRavno}")
+  # print(f"{END}{'='*lenOfRavno}")
   print("WORDS     MISTAKES   CORRECT")
-  print(f"  {CONSTANTS.BLUE}{i:<3}        {m:<3}       {i-m:<3}{CONSTANTS.END}")
-  print("="*lenOfRavno)
+  print(f"  {BLUE}{i:<3}        {m:<3}       {i-m:<3}{END}")
+  print("="*30)
   
 # def getWordsAndTraslation():
 #   pass
@@ -128,7 +142,8 @@ def main() :
 
   dictionary = newDictionary()
   while (dictionary == {}):
-    print("This dictionary is empty.Choose anothe one!")
+    # print("This dictionary is empty.Choose anothe one!")
+    PRINT_MASSAGE(FILE="REPEATE",NAME="EMPTY_DICTIONARY")
     dictionary = newDictionary()
   i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
 
@@ -137,16 +152,19 @@ def main() :
   # servey
     if (i == len(keys)) :
       showResult(i,mistakesBLUE)
-      print("You have repeated all words in a dictionary !\n")
-      for i in range(0,len(arrOptions)) :
-        print(f"\t[{CONSTANTS.WARNING}{i}{CONSTANTS.END}] : {arrOptions[i]}")
-      choose = int(input(f"\nChoose the option.Press the number[{CONSTANTS.WARNING}0{CONSTANTS.END}-{CONSTANTS.WARNING}{len(arrOptions)-1}{CONSTANTS.END}] : "))
+      PRINT_MASSAGE(FILE="REPEATE",NAME="END_HEADER")
+      options = PRINT_MASSAGE(FILE="REPEATE",NAME="END_OPTIONS")
+      PRINT_MASSAGE(FILE="REPEATE",NAME="END_CHOSE",DATA=[(len(options))])
+      
+
+      choose = int(input(" "))
+
       if (choose == 0):
         i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
       elif(choose == 1):
         dictionary = newDictionary(arrDictionaries)
         while (dictionary == {}):
-          print("This dictionary is empty.Choose anothe one!")
+          PRINT_MASSAGE(FILE="REPEATE",NAME="EMPTY_DICTIONARY")
           dictionary = newDictionary()
         i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
       else :
@@ -156,7 +174,7 @@ def main() :
     programmWord = keys[index]
     programmTranslation = dictionary[programmWord]
 
-    print(f"\n{CONSTANTS.BLUE}{i+1}.{CONSTANTS.END}{programmWord}") 
+    PRINT_MASSAGE(FILE="REPEATE",NAME="WORD",DATA=[programmWord],NUM=i+1)
     userTranslation = str(input()).strip()
 
     if (userTranslation == "STOP"):

@@ -1,13 +1,50 @@
-# from CONSTANTS import * 
-
 import os
 import sys
+import time
+from CONSTANTS import *
+clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
-PRINT_RESULT_SCRIPT_PATH = "printResult.py"
-WRITE_DATA_SCRIPT_PATH = "witeDataToDictionary.py"
-REPEAT_WORDS_PATH = "repeateWords.py"
-DICTIONARIES_PATH = "dictionaries"
-COLORS_PATH = "sources/colors.py"
+clearConsole()
+
+PATH = os.getcwd() # path to main.py
+
+# add all folders to the system path
+path, dirs, files = next(os.walk(PATH))
+for i in range (0,len(dirs)):
+    # print(f"I added : {i}.{dirs[i]}")
+    sys.path.insert(i, dirs[i])
+
+# CONSTANTS_FILE_NAME = "CONSTANTS.py"
+# CONSTANTS = __import__(CONSTANTS_FILE_NAME[:-3])
+
+PRINT_MASSAGE(FILE="MAIN",NAME="INSTRUCTION_HEADER")
+# PRINT_MASSAGE(FILE="MAIN",NAME="INSTRUCTION_OPTIONS")
+# print("===============")
+arrLen = len(PRINT_MASSAGE(FILE="MAIN",NAME="INSTRUCTION_OPTIONS"))-1
+  # for i in range(0,len(arrDictionaries)) :
+# DATA=[len(test)]
+# print(f"=======hi!{len(test)}!ih========")
+# print(f"======={test}=***===")
+PRINT_MASSAGE(FILE="TEMPLATES",NAME="CHOSE",DATA=[arrLen])
+chose = int(input(" "))
+
+if (chose == 0 ):
+  repeatWords = __import__(REPEAT_WORDS_PATH[:-3])
+  repeatWords.main()
+elif (chose  == 1):
+  writeResult = __import__(WRITE_DATA_SCRIPT_PATH[:-3])
+  writeResult.main()
+
+"""
+  
+  import os
+import sys
+import time
+
+from CONSTANTS import *
+clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+
+clearConsole()
 
 PATH = os.getcwd() # path to main.py
 
@@ -17,25 +54,19 @@ for i in range (0,len(dirs)):
     print(f"I added : {i}.{dirs[i]}")
     sys.path.insert(i, dirs[i])
 
+CONSTANTS_FILE_NAME = "CONSTANTS.py"
+CONSTANTS = __import__(CONSTANTS_FILE_NAME[:-3])
 
-class colors:
-  INCORRECT = '\033[31m' # red
-  CORRECT = '\033[32m' # green
-  WARNING = '\033[33m'#'\033[33m' # orange
-  BLUE = '\033[35m' # blue
-  UNDERLINED = '\033[4m'
-  BOLD = '\033[1m'
-  END = '\033[0m' # simple text (stop colourful text)
-# print smth with color :print(f"{colors.INCORRECT}Error : Test message !{colors.END}") 
+CONSTANTS.PRINT_MASSAGE(NAME="MAIN_INSTRUCTION_HEADER")
+CONSTANTS.PRINT_MASSAGE(NAME="MAIN_INSTRUCTION_OPTIONS")
+CONSTANTS.PRINT_MASSAGE(NAME="MAIN_CHOSE")
 
-
-
-print(f"======INSTRUCTUON=======\nYOU can :\n\t[{colors.WARNING}0{colors.END}] : repeate dictionaries\n\t[{colors.WARNING}1{colors.END}] : write data to them.\n========================")
-chose = int(input(f"Chose the option.Press the number [{colors.WARNING}0{colors.END}-{colors.WARNING}1{colors.END}] : "))
+chose = int(input(" "))
 
 if (chose == 0 ):
-  repeatWords = __import__(REPEAT_WORDS_PATH[:-3])
+  repeatWords = __import__(CONSTANTS.REPEAT_WORDS_PATH[:-3])
   repeatWords.main()
 elif (chose  == 1):
-  writeResult = __import__(WRITE_DATA_SCRIPT_PATH[:-3])
+  writeResult = __import__(CONSTANTS.WRITE_DATA_SCRIPT_PATH[:-3])
   writeResult.main()
+  """

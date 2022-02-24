@@ -8,4 +8,7 @@ def getDictionary() :
       "ascascasc" : "ascascac",
       "dcscsdc" : "sdcsdcsdcds",
       "ccccccccc" : "c",
+      "cdcdcsscsc" : "dcscscsddcs",
+      "csdcsdcscdsdcsdcsc" : "cssdcdscscdccsssssssssssssssss",
+      "1111111111111111111111" : "1",
     }

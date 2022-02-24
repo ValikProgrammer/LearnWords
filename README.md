@@ -43,8 +43,13 @@ console.log(obj)
 + печататьть числа по размерам
 + clear console - https://www.delftstack.com/howto/python/python-clear-console/
 + [***VERY inportant***] to know how to change the version of the project and how to name this version for exfmple "Repeating And Writing Is working"
-
++ read - https://proglib.io/p/dinamicheskoe-vypolnenie-vyrazheniy-v-python-funkciya-eval-2020-05-14
 ## GITHUB
+### Versions
++ 23.02.22
+    + все работает(запись и повторение слов) печатание сообщений происходит через локальные print()
++ 24.02.22
+    + сделал не докноца работающую версию в которой печатаются сообщения через обьект MASSAGES который находиться в файле CONSTANTS.py
 ## Github push
 
 <!--+ git clone https://github.com/ValikProgrammer/LearnWords   -->
