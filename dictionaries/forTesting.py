@@ -7,4 +7,5 @@ def getDictionary() :
       "casasca" : "scascasc",
       "ascascasc" : "ascascac",
       "dcscsdc" : "sdcsdcsdcds",
+      "ccccccccc" : "c",
     }
