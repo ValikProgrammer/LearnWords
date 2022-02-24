@@ -140,6 +140,3 @@ colourful text - https://habr.com/ru/post/119436/
 another wariant to get colored text
 from termcolor import colored
 print(colored('hello', 'red'), colored('world', 'green'))
-### TEST LOADING
-+list
-
