@@ -1,25 +1,10 @@
 import os
 import sys
 import random
+from CONSTANTS import *
 
-CONSTANTS_FILE_NAME = "CONSTANTS.py"
-CONSTANTS = __import__(CONSTANTS_FILE_NAME[:-3])
 
-# class CONSTANTS.CONSTANTS.CONSTANTS.colors:
-#   INCORRECT = '\033[31m' # red
-#   CORRECT = '\033[32m' # green
-#   WARNING = '\033[33m'#'\033[33m' # orange
-#   BLUE = '\033[35m' # blue
-#   UNDERLINED = '\033[4m'
-#   BOLD = '\033[1m'
-#   END = '\033[0m' # simple text (stop colourful text)
-
-# actions for fluent working with dictionaries (because they are in folder)
-# CONSTANTS.DICTIONARIES_PATH = "dictionaries"
-# path = os.getcwd()
-
-blaBla, dirs, arrDictionaries = next(os.walk(CONSTANTS.PATH+"/"+CONSTANTS.DICTIONARIES_PATH))
-# sys.path.insert(0, pathToCONSTANTS.DICTIONARIES_PATH)
+_, _, arrDictionaries = next(os.walk(DICTIONARIES_PATH))
 
 arrOptions = [ # options for servey at the end of the dictionary
   "Continue working with this dictionary",
@@ -30,11 +15,14 @@ arrOptions = [ # options for servey at the end of the dictionary
 
 # #===========FUNCTIONS==================
 # ##======STARTING SMTH==================
-def newDictionary(arrDictionaries=arrDictionaries):
+def newDictionary():
+  global arrDictionaries
   print("\nAvailable Dictionaries : ")
+
   for i in range(0,len(arrDictionaries)) :
-    print(f"\t[{CONSTANTS.WARNING}{i}{CONSTANTS.END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
-  num = int(input(f"\nChoose the dictionary. Press the number[{CONSTANTS.WARNING}0{CONSTANTS.END}-{CONSTANTS.WARNING}{len(arrDictionaries)-1}{CONSTANTS.END}]: "))
+    print(f"\t[{WARNING}{i}{END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
+
+  num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: "))
  
   module = __import__(arrDictionaries[num][:-3])
   dictionary =  module.getDictionary()
@@ -46,15 +34,13 @@ def newLoop (dictionary) :
   arrNumbers = list(range(len(keys))) # 0 , 1, 2 ..   jsut get numbers from 0 to len(keys) 
   arrNumbersRandomSorted = random.sample(arrNumbers, len(arrNumbers)) # 0 , 2 , 1 ...
   i = mistakesBLUE = 0
-  print(f"Amount of all words:{CONSTANTS.BLUE}{len(keys)}{CONSTANTS.END}") 
+  print(f"Amount of all words:{BLUE}{len(keys)}{END}") 
   return [i , mistakesBLUE , keys  , arrNumbersRandomSorted]
+
 # ##======MAIN WORK==================
 def charThatNotEquals (s1,s2) :
   arr = []
-  # for i in range(0,len(s1)):
-  #   if(s1[i] != s2[i]):
-  #     arr.append(s2[i])
-  # return arr[0]
+
   if (len(s2) > len(s1)):
     # return s2[-1]
     need = len(s2) - len(s1)
@@ -70,7 +56,9 @@ def charThatNotEquals (s1,s2) :
   return ''.join(arr) 
 
 def compare (programmTranslation,userTranslation):
-  if programmTranslation == userTranslation: return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
+  correctAnswer   = f"{CORRECT}[OK]{END} : {CORRECT}{programmTranslation}{END}"
+  incorrectAnswer = f"{INCORRECT}[ERROR]{END} : {INCORRECT}{programmTranslation}{END}"
+  if programmTranslation == userTranslation: return correctAnswer
 
   arrUserTranslation = userTranslation.split(' ')
   arrProgrammTranslation = programmTranslation.split(' ')
@@ -79,45 +67,28 @@ def compare (programmTranslation,userTranslation):
       # if 3 forms of the verb is the same
       if(arrProgrammTranslation[0] == arrProgrammTranslation[1] == arrProgrammTranslation[2]):  
           if(arrUserTranslation[1] == arrUserTranslation[2] == "="  or "."):
-            return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
+            return correctAnswer
       # if 1 from different and 2from == 3form 
       if (arrProgrammTranslation[1] == arrProgrammTranslation[2]):
         if(arrUserTranslation[1] == arrProgrammTranslation[1]):
           if(arrUserTranslation[2] == "=" or "."):
-            return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
+            return correctAnswer
       # if 3 forms all different
       if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[1]) == arrUserTranslation[1] or arrProgrammTranslation[1] == arrUserTranslation[1]):
         if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[2]) == arrUserTranslation[2] or arrProgrammTranslation[2] == arrUserTranslation[2]):
-          return f"{CONSTANTS.CORRECT}[OK]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
-  #return f"{CONSTANTS.INCORRECT}[ERROR]{CONSTANTS.END} : {CONSTANTS.WARNING}{programmTranslation}{CONSTANTS.END}"
-  return f"{CONSTANTS.INCORRECT}[ERROR]{CONSTANTS.END} : {CONSTANTS.INCORRECT}{programmTranslation}{CONSTANTS.END}"
+          return correctAnswer
+
+  return incorrectAnswer
 
 def showResult(i,m):
-  # print(f"========RESULT={CONSTANTS.BLUE}{round(( (i-m)/i )*100)}{CONSTANTS.END}%========")
-  
-  moduleResultPrinting = (__import__(CONSTANTS.PRINT_RESULT_SCRIPT_PATH[:-3]))
+  moduleResultPrinting = (__import__(PRINT_RESULT_SCRIPT_PATH[:-3]))
   SCORE = round(( (i-m)/i )*100)
-  resultArr = moduleResultPrinting.getResult(SCORE)
-  massageScore = "Score: "
-  lenOfRavno = len(resultArr[0])+len(massageScore)
-  middle = len(resultArr)//2
-
-
-  print("="*lenOfRavno)
-
-  for j in range (0,len(resultArr)):
-    copy_line = resultArr[j]
-    if(j == middle):
-      resultArr[middle] = massageScore + copy_line 
-    else :
-      # print(f"te{' '*len(massageScore)}te")
-      resultArr[j] = str(" "*(len(massageScore)) ) + copy_line
-    print(f"{CONSTANTS.BOLD}{CONSTANTS.BLUE}{resultArr[j]}")
-
-  print(f"{CONSTANTS.END}{'='*lenOfRavno}")
+  console = moduleResultPrinting.getResult(SCORE)
+  for line in console:
+      print(f"{BLUE}{line}{END}")
   print("WORDS     MISTAKES   CORRECT")
-  print(f"  {CONSTANTS.BLUE}{i:<3}        {m:<3}       {i-m:<3}{CONSTANTS.END}")
-  print("="*lenOfRavno)
+  print(f"  {BLUE}{i:<3}        {m:<3}       {i-m:<3}{END}")
+  print("="*30)
   
 # def getWordsAndTraslation():
 #   pass
@@ -133,18 +104,18 @@ def main() :
   i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
 
   while True :
-
   # servey
     if (i == len(keys)) :
       showResult(i,mistakesBLUE)
       print("You have repeated all words in a dictionary !\n")
+      
       for i in range(0,len(arrOptions)) :
-        print(f"\t[{CONSTANTS.WARNING}{i}{CONSTANTS.END}] : {arrOptions[i]}")
-      choose = int(input(f"\nChoose the option.Press the number[{CONSTANTS.WARNING}0{CONSTANTS.END}-{CONSTANTS.WARNING}{len(arrOptions)-1}{CONSTANTS.END}] : "))
+        print(f"\t[{WARNING}{i}{END}] : {arrOptions[i]}")
+      choose = int(input(f"\nChoose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : "))
       if (choose == 0):
         i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
       elif(choose == 1):
-        dictionary = newDictionary(arrDictionaries)
+        dictionary = newDictionary()
         while (dictionary == {}):
           print("This dictionary is empty.Choose anothe one!")
           dictionary = newDictionary()
@@ -156,7 +127,7 @@ def main() :
     programmWord = keys[index]
     programmTranslation = dictionary[programmWord]
 
-    print(f"\n{CONSTANTS.BLUE}{i+1}.{CONSTANTS.END}{programmWord}") 
+    print(f"\n{BLUE}{i+1}.{END}{programmWord}") 
     userTranslation = str(input()).strip()
 
     if (userTranslation == "STOP"):

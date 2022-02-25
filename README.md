@@ -37,6 +37,22 @@ console.log(obj)
 # 
 ```
 ## To Do
++ в файле writeData добавить возможность нескольких ответов 
+    + так же прописать это в коде в repeatWords (programmWord это будет массив а не слово и программа должна пробегаться по массиву и сравнивать каждый раз)
+    + например возможные ответы:
+        + 65
+        + 65%
++ везде где есть выбор нужно добавить цикл  while который будет проверять реально ли можно выполнить эту опцию или это ошибка
+    + возможно еще нужно будет добавить try , except
+    + ```python
+        choose = input("Some text")
+        try :
+            choose = str(choose)
+        except:
+            print("you entered wrong number. try againg")
+
+    ```
+--------
 + создать обьект с принтами там будет ключи и значения Напримр
 	+ inputDictionary : Choose dictionary ,,,,,,,
 + подкорректировать print() там где просто написано [0-num] ghbdzpfnm 'nj r lkbyyt vfccbdf'
