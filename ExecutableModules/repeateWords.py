@@ -56,7 +56,7 @@ def newLoop (dictionary) :
   arrNumbersRandomSorted = random.sample(arrNumbers, len(arrNumbers)) # 0 , 2 , 1 ...
   i = mistakesBLUE = 0
   # print(f"Amount of all words:{BLUE}{len(keys)}{END}") 
-  arrLen = len(keys) -1
+  arrLen = len(keys)
   # print(f"\n\n{INCORRECT}need = len(keys) -1 {need}")
   PRINT_MASSAGE(FILE="REPEATE",NAME="AMOUNT",DATA=[arrLen])
   return [i , mistakesBLUE , keys  , arrNumbersRandomSorted]
@@ -126,12 +126,12 @@ def showResult(i,m):
   #     resultArr[j] = str(" "*(len(massageScore)) ) + copy_line
   #   print(f"{CONSTANTS.BOLD}{CONSTANTS.BLUE}{resultArr[j]}")
   PRINT_MASSAGE(FILE="REPEATE",NAME="RESULT",DATA=console)
-  # PRINT_MASSAGE(FILE="REPEATE",NAME="STATISTICS",DATA=[i],NUM=[m])
+  PRINT_MASSAGE(FILE="REPEATE",NAME="STATISTICS",DATA=[i],NUM=m)
 
   # print(f"{END}{'='*lenOfRavno}")
-  print("WORDS     MISTAKES   CORRECT")
-  print(f"  {BLUE}{i:<3}        {m:<3}       {i-m:<3}{END}")
-  print("="*30)
+  # print("WORDS     MISTAKES   CORRECT")
+  # print(f"  {BLUE}{i:<3}        {m:<3}       {i-m:<3}{END}")
+  # print("="*30)
   
 # def getWordsAndTraslation():
 #   pass
@@ -154,7 +154,7 @@ def main() :
       showResult(i,mistakesBLUE)
       PRINT_MASSAGE(FILE="REPEATE",NAME="END_HEADER")
       options = PRINT_MASSAGE(FILE="REPEATE",NAME="END_OPTIONS")
-      PRINT_MASSAGE(FILE="REPEATE",NAME="END_CHOSE",DATA=[(len(options))])
+      PRINT_MASSAGE(FILE="TEMPLATES",NAME="CHOSE",DATA=[(len(options)-1)])
       
 
       choose = int(input(" "))

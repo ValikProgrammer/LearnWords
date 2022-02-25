@@ -82,10 +82,11 @@ def getMassage(FILE="TEMPLATES",NAME="ERROR",DATA=[0],i=0,NUM=[0]):
     },
     "REPEATE":{
           "WORD":[
-            "{BLUE}{NUM}.{END}{DATA}"
+            "{BLUE}{NUM}.{END}{DATA[i]}",
+            ""
           ],
           "AMOUNT":[
-            "Amount of all words:{BLUE}{DATA}{END}"
+            "Amount of all words:{BLUE}{DATA[0]}{END}"
           ],
           "NEW_DICTIONARY_HEADER":[
             "Available Dictionaries :"
@@ -97,22 +98,19 @@ def getMassage(FILE="TEMPLATES",NAME="ERROR",DATA=[0],i=0,NUM=[0]):
             "You have repeated all words in a dictionary !"
           ],
           "END_OPTIONS" :[
-            "\tContinue working with this dictionary",
-            "\tChoose another dictionary",
-            "\tSTOP and EXIT"
-          ],
-          "END_CHOSE" : [
-            "Chose he option.Press the number [{WARNING}0{END}-{WARNING}{DATA}{END}] : "
+            "\t[0] : Continue working with this dictionary",
+            "\t[1] : Choose another dictionary",
+            "\t[2] : STOP and EXIT"
           ],
           "EMPTY_DICTIONARY" : [
             "This dictionary is empty.Choose anothe one!"
           ],
           "RESULT" : [
-            "{BOLD}{BLUE}{DATA}{END}",
+            "{BOLD}{BLUE}{DATA[i]}{END}",
           ],
           "STATISTICS":[
             "WORDS     MISTAKES   CORRECT",
-            "  {BLUE}{DATA:<3}        {DATA:<3}       {DATA:<3}{END}",
+            "  {BLUE}{DATA[0]:<3}        {NUM:<3}       {DATA[0]-NUM:<3}{END}",
             '{"="*30}',
           ],
     },
@@ -133,12 +131,12 @@ def getMassage(FILE="TEMPLATES",NAME="ERROR",DATA=[0],i=0,NUM=[0]):
   return MASSAGES[FILE][NAME]
 
 def PRINT(data):
-  # print()
+  print()
   # print(f"===={data}===")
   if (type(data) == str):
     # print("=========hello string=============")
     for char in data:
-      # time.sleep(0.01)
+      time.sleep(0.01)
       sys.stdout.write(char)
       sys.stdout.flush()
   elif (type(data) == list):
@@ -191,7 +189,7 @@ def PRINT_MASSAGE(FILE,NAME,DATA=[0],NUM=0):
       # print(s)
       output.append(eval(s))
   for el in output:
-    print(el)
+    PRINT(el)
     # PRINT(output[i])
   # print(f"\n================{len(output)}") 
 
