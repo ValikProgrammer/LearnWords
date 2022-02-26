@@ -33,9 +33,9 @@ def newLoop (dictionary) :
   keys = list(dictionary.keys()) # get keys from object
   arrNumbers = list(range(len(keys))) # 0 , 1, 2 ..   jsut get numbers from 0 to len(keys) 
   arrNumbersRandomSorted = random.sample(arrNumbers, len(arrNumbers)) # 0 , 2 , 1 ...
-  i = mistakesBLUE = 0
+  i = mistakesAmount = 0
   print(f"Amount of all words:{BLUE}{len(keys)}{END}") 
-  return [i , mistakesBLUE , keys  , arrNumbersRandomSorted]
+  return [i , mistakesAmount , keys  , arrNumbersRandomSorted]
 
 # ##======MAIN WORK==================
 def charThatNotEquals (s1,s2) :
@@ -101,25 +101,25 @@ def main() :
   while (dictionary == {}):
     print("This dictionary is empty.Choose anothe one!")
     dictionary = newDictionary()
-  i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
+  i , mistakesAmount , keys , arrIndex = newLoop(dictionary)
 
   while True :
   # servey
     if (i == len(keys)) :
-      showResult(i,mistakesBLUE)
+      showResult(i,mistakesAmount)
       print("You have repeated all words in a dictionary !\n")
       
       for i in range(0,len(arrOptions)) :
         print(f"\t[{WARNING}{i}{END}] : {arrOptions[i]}")
       choose = int(input(f"\nChoose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : "))
       if (choose == 0):
-        i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
+        i , mistakesAmount , keys , arrIndex = newLoop(dictionary)
       elif(choose == 1):
         dictionary = newDictionary()
         while (dictionary == {}):
           print("This dictionary is empty.Choose anothe one!")
           dictionary = newDictionary()
-        i , mistakesBLUE , keys , arrIndex = newLoop(dictionary)
+        i , mistakesAmount , keys , arrIndex = newLoop(dictionary)
       else :
         break;
     # word and translation
@@ -131,12 +131,13 @@ def main() :
     userTranslation = str(input()).strip()
 
     if (userTranslation == "STOP"):
-      showResult(i,mistakesBLUE)
+      if (i != 0 ): # if i == 0 we will have mistake in showResult() named "division by zero"
+        showResult(i,mistakesAmount)
       break;
 
     res = compare(programmTranslation,userTranslation.lower())
     print(res)
-        # костыль хаххахаххха
+    # костыль хаххахаххха
     if (res[6] == "E"):
-      mistakesBLUE+=1
+      mistakesAmount+=1
     i+=1
