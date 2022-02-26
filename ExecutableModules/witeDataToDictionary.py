@@ -15,7 +15,8 @@ def chooseDictionary():
   return arrDictionaries[num][:-3] # dictionary name without ".py"
 
 
-def writeData(dict,data,pathToFolderWithDictionaries=pathToFolderWithDictionaries):
+def writeData(dict,data):
+  global pathToFolderWithDictionaries
   fullPath = pathToFolderWithDictionaries+"/"+dict+".py"
 
   with open(fullPath, 'r', encoding='utf-8') as file: 
@@ -24,25 +25,29 @@ def writeData(dict,data,pathToFolderWithDictionaries=pathToFolderWithDictionarie
   with open(fullPath, 'w', encoding='utf-8') as file:
     for i in range (0,len(lines)):
       if lines[i].strip() == "}" :
-        lines[i] = " "*6 + f'"{data[0]}" : "{data[1]}"'+",\n" + " "*4 + "}"
+        lines[i] = " "*6 + f'"{data[0]}" : {data[1]}'+",\n" + " "*4 + "}"
       file.write(lines[i])
 
 
 def getData() :
-  question = input("Question : ")
+  question = input("\nQuestion : ").strip()
   if (question == "STOP"):
     return ["STOP"]
   elif (question == "OTHER"):
     return ["OTHER"]
-  answer = input("Answer : ")
-  return [question,answer] # lower() не надо
+  num = int(input("how many answers will you type [number]: "))
+  answers = []
+  for i in range (0,num):
+    answers.append(input("Answer : ").strip())
+  return [question,answers] # lower() не надо
 
 
-print("======INSTRUCTUON=======\n[STOP] : stop programm\n[OTHER] : choose another dictionary ")
+print(f"======INSTRUCTUON=======\n[{WARNING}STOP{END}]  : stop programm\n[{WARNING}OTHER{END}] : choose another dictionary ")
 
 def main ():
   dictName = chooseDictionary()
 
+  addedWords = 0
   while True:
     data = getData()
     
@@ -52,3 +57,5 @@ def main ():
       dictName = chooseDictionary()
     else :      
       writeData(dictName,data)
+      addedWords += 1
+  print(f"You have added {addedWords} words")

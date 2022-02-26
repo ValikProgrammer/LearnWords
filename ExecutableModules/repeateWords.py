@@ -56,27 +56,31 @@ def charThatNotEquals (s1,s2) :
   return ''.join(arr) 
 
 def compare (programmTranslation,userTranslation):
-  correctAnswer   = f"{CORRECT}[OK]{END} : {CORRECT}{programmTranslation}{END}"
-  incorrectAnswer = f"{INCORRECT}[ERROR]{END} : {INCORRECT}{programmTranslation}{END}"
-  if programmTranslation == userTranslation: return correctAnswer
+  if type(programmTranslation) != list : programmTranslation = [programmTranslation]
 
-  arrUserTranslation = userTranslation.split(' ')
-  arrProgrammTranslation = programmTranslation.split(' ')
-  if (len(arrUserTranslation) == 3 ):
-    if(arrUserTranslation[0] == arrProgrammTranslation[0]):
-      # if 3 forms of the verb is the same
-      if(arrProgrammTranslation[0] == arrProgrammTranslation[1] == arrProgrammTranslation[2]):  
-          if(arrUserTranslation[1] == arrUserTranslation[2] == "="  or "."):
+  correctAnswer = f"{CORRECT}[OK]{END} : {CORRECT}{f'{END} or {CORRECT}'.join(programmTranslation)}{END}" # programmTranslation[0] - moct correct
+  incorrectAnswer = f"{INCORRECT}[ERROR]{END} : {INCORRECT}{f'{END} or {INCORRECT}'.join(programmTranslation)}{END}"
+
+  for progTrans in programmTranslation:
+    if progTrans == userTranslation: return correctAnswer
+
+    arrUserTranslation = userTranslation.split(' ')
+    arrProgrammTranslation = progTrans.split(' ')
+    if (len(arrUserTranslation) == 3 ):
+      if(arrUserTranslation[0] == arrProgrammTranslation[0]):
+        # if 3 forms of the verb is the same
+        if(arrProgrammTranslation[0] == arrProgrammTranslation[1] == arrProgrammTranslation[2]):  
+            if(arrUserTranslation[1] == arrUserTranslation[2] == "="  or "."):
+              return correctAnswer
+        # if 1 from different and 2from == 3form 
+        if (arrProgrammTranslation[1] == arrProgrammTranslation[2]):
+          if(arrUserTranslation[1] == arrProgrammTranslation[1]):
+            if(arrUserTranslation[2] == "=" or "."):
+              return correctAnswer
+        # if 3 forms all different
+        if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[1]) == arrUserTranslation[1] or arrProgrammTranslation[1] == arrUserTranslation[1]):
+          if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[2]) == arrUserTranslation[2] or arrProgrammTranslation[2] == arrUserTranslation[2]):
             return correctAnswer
-      # if 1 from different and 2from == 3form 
-      if (arrProgrammTranslation[1] == arrProgrammTranslation[2]):
-        if(arrUserTranslation[1] == arrProgrammTranslation[1]):
-          if(arrUserTranslation[2] == "=" or "."):
-            return correctAnswer
-      # if 3 forms all different
-      if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[1]) == arrUserTranslation[1] or arrProgrammTranslation[1] == arrUserTranslation[1]):
-        if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[2]) == arrUserTranslation[2] or arrProgrammTranslation[2] == arrUserTranslation[2]):
-          return correctAnswer
 
   return incorrectAnswer
 
@@ -127,8 +131,7 @@ def main() :
     programmWord = keys[index]
     programmTranslation = dictionary[programmWord]
 
-    print(f"\n{BLUE}{i+1}.{END}{programmWord}") 
-    userTranslation = str(input()).strip()
+    userTranslation = str(input(f"\n{BLUE}{i+1}.{END}{programmWord} : ")).strip()
 
     if (userTranslation == "STOP"):
       if (i != 0 ): # if i == 0 we will have mistake in showResult() named "division by zero"
