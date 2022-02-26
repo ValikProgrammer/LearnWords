@@ -120,4 +120,3 @@ def getResult(SCORE,MASSAGE="Score: ",):
     # for line in console:
     #     print(line)
     return console
-
