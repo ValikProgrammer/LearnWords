@@ -105,7 +105,8 @@ folder/ - игнорирование всей дирректории
 #### working with files
 + git add - добавление файлов в стадию ожидания;
     + чтоб добавить сразу все пиши git add . или git add -A
-    + что добавить файлы с определенным разрешением fit add *.html
+    + что добавить файлы с определенным разрешением git add *.html
++ git reset [file] - reset changes (get changes from remote repository)
 + git rm - отмена действий.
     + -cached "file"
 
@@ -156,6 +157,3 @@ colourful text - https://habr.com/ru/post/119436/
 another wariant to get colored text
 from termcolor import colored
 print(colored('hello', 'red'), colored('world', 'green'))
-### TEST LOADING
-+list
-
