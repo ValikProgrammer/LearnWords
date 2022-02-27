@@ -30,7 +30,7 @@ def writeData(dict,data):
 
 
 def getData() :
-  question = input("\nQuestion : ").strip()
+  question = input(f"\n{WARNING}Question{END} : ").strip()
   if (question == "STOP"):
     return ["STOP"]
   elif (question == "OTHER"):
@@ -38,7 +38,7 @@ def getData() :
   num = int(input("how many answers will you type [number]: "))
   answers = []
   for i in range (0,num):
-    answers.append(input(f"Answer {i+1} : ").strip())
+    answers.append(input(f"{WARNING}Answer {i+1} {END} : ").strip())
   return [question,answers] # lower() не надо
 
 
