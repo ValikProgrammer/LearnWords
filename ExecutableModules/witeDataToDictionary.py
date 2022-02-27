@@ -38,7 +38,7 @@ def getData() :
   num = int(input("how many answers will you type [number]: "))
   answers = []
   for i in range (0,num):
-    answers.append(input("Answer : ").strip())
+    answers.append(input(f"Answer {i+1} : ").strip())
   return [question,answers] # lower() не надо
 
 
