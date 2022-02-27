@@ -58,11 +58,14 @@ def charThatNotEquals (s1,s2) :
 
 def compare (programmTranslation,userTranslation):
   if type(programmTranslation) != list : programmTranslation = [programmTranslation]
-
+  
+  userTranslation = userTranslation.lower()
   correctAnswer = f"{CORRECT}[OK]{END} : {CORRECT}{f'{END} or {CORRECT}'.join(programmTranslation)}{END}" # programmTranslation[0] - moct correct
   incorrectAnswer = f"{INCORRECT}[ERROR]{END} : {INCORRECT}{f'{END} or {INCORRECT}'.join(programmTranslation)}{END}"
 
   for progTrans in programmTranslation:
+    progTrans = progTrans.lower()
+
     if progTrans == userTranslation: return correctAnswer
 
     arrUserTranslation = userTranslation.split(' ')
@@ -133,7 +136,7 @@ def main() :
     programmWord = keys[index]
     programmTranslation = dictionary[programmWord]
 
-    userTranslation = str(input(f"\n{BLUE}{i+1}.{END}{programmWord} : ")).strip()
+    userTranslation = str(input(f"\n{BLUE}{i+1}.{END}{programmWord.capitalize()} : ")).strip()
 
     if (userTranslation == "STOP"):
       if (i != 0 ): # if i == 0 we will have mistake in showResult() named "division by zero"
