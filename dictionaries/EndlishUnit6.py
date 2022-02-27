@@ -13,7 +13,7 @@ def getDictionary() :
       "прилавок" : ['stall'],
       "резьба по дереву" : ['woodcarving'],
       "плетение из соломки" : ['straw weaving'],
-      "вышивка" : ['woodcarving'],
+      "вышивка" : ['embroidery'],
       "ковка" : ['blacksmithing'],
       "средневековый" : ['medieval'],
       "предок" : ['ancestor', 'an ancestor'],
