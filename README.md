@@ -106,7 +106,7 @@ folder/ - игнорирование всей дирректории
 + git add - добавление файлов в стадию ожидания;
     + чтоб добавить сразу все пиши git add . или git add -A
     + что добавить файлы с определенным разрешением git add *.html
-+ git reset [file] - reset changes (get changes from remote repository)
++ git restore [file] - restore changes (get changes from remote repository)
 + git rm - отмена действий.
     + -cached "file"
 

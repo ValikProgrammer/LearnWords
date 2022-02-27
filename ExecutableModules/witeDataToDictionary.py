@@ -58,4 +58,4 @@ def main ():
     else :      
       writeData(dictName,data)
       addedWords += 1
-  print(f"You have added {addedWords} words")
+  print(f"You have added {WARNING}{addedWords}{END} words!")
