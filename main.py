@@ -16,8 +16,8 @@ def clearConsole():
 clearConsole()
 
 print(f"======INSTRUCTUON=======\nYOU can :\n\t[{WARNING}0{END}] : repeate dictionaries\n\t[{WARNING}1{END}] : write data to them.\n========================")
-chose = int(input(f"Chose the option.Press the number [{WARNING}0{END}-{WARNING}1{END}] : "))
-
+chose = int(input(f"Chose the option.Press the number [{WARNING}0{END}-{WARNING}1{END}] : {WARNING}"))
+print(f"{END}")
 if (chose == 0 ):
   repeatWords = __import__(REPEAT_WORDS_PATH[:-3])
   repeatWords.main()

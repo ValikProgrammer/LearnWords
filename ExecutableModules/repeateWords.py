@@ -17,12 +17,13 @@ arrOptions = [ # options for servey at the end of the dictionary
 # ##======STARTING SMTH==================
 def newDictionary():
   global arrDictionaries
-  print("\nAvailable Dictionaries : ")
+  print(f"{BLUE}Available Dictionaries : {END}")
 
   for i in range(0,len(arrDictionaries)) :
     print(f"\t[{WARNING}{i}{END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
 
-  num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: "))
+  num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: {WARNING}"))
+  print(f"{END}")
  
   module = __import__(arrDictionaries[num][:-3])
   dictionary =  module.getDictionary()
@@ -115,7 +116,8 @@ def main() :
       
       for i in range(0,len(arrOptions)) :
         print(f"\t[{WARNING}{i}{END}] : {arrOptions[i]}")
-      choose = int(input(f"\nChoose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : "))
+      choose = int(input(f"Choose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : {WARNING}"))
+      print(f"{END}")
       if (choose == 0):
         i , mistakesAmount , keys , arrIndex = newLoop(dictionary)
       elif(choose == 1):

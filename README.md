@@ -47,7 +47,7 @@ console.log(obj)
     + ```python
         choose = input("Some text")
         try :
-            choose = str(choose)
+            choose = int(choose)
         except:
             print("you entered wrong number. try againg")
 
