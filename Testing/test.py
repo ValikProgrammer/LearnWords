@@ -44,11 +44,19 @@ def test(SCORE="100",SIZE=4,CHAR="#"):
     # if (SIZE < 5):
     #     SIZE = 5 
     length = len(CHAR)
+    if length < middle:
+        print(f"len of {CHAR} is too big!")
+        S = ""
+        for i in range (0,middle-1):
+            S += CHAR[i]
+        CHAR = S
+        length = len(CHAR)
+
     IDoNotKnowHowToNameItButItMeanTheBoldOfResult = 5
     charAmount = SIZE // (length*IDoNotKnowHowToNameItButItMeanTheBoldOfResult)
     if charAmount != 0: CHAR = CHAR*charAmount
 
-    if length < middle:
+    if 0 == 0:
 
         s = CHAR * ( SIZE//length )
         t = SIZE - len(s)
@@ -61,11 +69,15 @@ def test(SCORE="100",SIZE=4,CHAR="#"):
         R = sepBetwenChars * (SIZE - length ) + CHAR              # Rght   (    #)
         E = CHAR + sepBetwenChars * (SIZE - (2*length) ) + CHAR   # Ends   (#   #)
 
-
+"""
     else:
         print(f"len of {CHAR} is too big!")
-        return []
-
+        S = ""
+        for i in range (0,middle-1):
+            S += CHAR[i]
+        CHAR = S
+        #return []
+"""
     SYMBOLS = {
 
     "0" : [
