@@ -44,7 +44,7 @@ def test(SCORE="100",SIZE=4,CHAR="#"):
     # if (SIZE < 5):
     #     SIZE = 5 
     length = len(CHAR)
-    if length < middle:
+    if length >= middle:
         print(f"len of {CHAR} is too big!")
         S = ""
         for i in range (0,middle-1):
