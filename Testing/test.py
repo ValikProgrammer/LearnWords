@@ -66,8 +66,8 @@ def test(SCORE,SIZE,CHAR="#"):
 
     F = s                                                     # Filled (#####)
     L = CHAR + sepBetwenChars * (SIZE - (length ))            # Left   (#    )
-    R = sepBetwenChars * (SIZE - length ) + CHAR              # Rght   (    #)
-    E = CHAR + sepBetwenChars * (SIZE - (2*length) ) + CHAR   # Ends   (#   #)
+    R = sepBetwenChars * (SIZE - length ) + CHAR[::-1]              # Rght   (    #)
+    E = CHAR + sepBetwenChars * (SIZE - (2*length) ) + CHAR[::-1]   # Ends   (#   #)
 
 #
 #   else:
