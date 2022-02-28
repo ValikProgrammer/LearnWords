@@ -211,7 +211,7 @@ END = '\033[0m' # simple text (stop colourful text)
 # hi = ("✋")
 # print("len c :",sys.getsizeof(hi) - sys.getsizeof(""))
 # console = test(SIZE=8,SCORE="%",CHAR="#")
-console = test(SIZE=9,SCORE="1234567890",CHAR="👍" )
+console = test(SIZE=15,SCORE="10",CHAR="oskar" )
 for line in console:
     print(f"{BOLD}{CORRECT}{line}{END}")
 
