@@ -69,15 +69,15 @@ def test(SCORE="100",SIZE=4,CHAR="#"):
         R = sepBetwenChars * (SIZE - length ) + CHAR              # Rght   (    #)
         E = CHAR + sepBetwenChars * (SIZE - (2*length) ) + CHAR   # Ends   (#   #)
 
-"""
-    else:
-        print(f"len of {CHAR} is too big!")
-        S = ""
-        for i in range (0,middle-1):
-            S += CHAR[i]
-        CHAR = S
-        #return []
-"""
+#
+#   else:
+#       print(f"len of {CHAR} is too big!")
+#        S = ""
+#       for i in range (0,middle-1):
+#           S += CHAR[i]
+#       CHAR = S
+#       #return []
+#
     SYMBOLS = {
 
     "0" : [
