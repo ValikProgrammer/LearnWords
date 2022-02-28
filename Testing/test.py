@@ -35,14 +35,12 @@
     # print("|🌀|\n|--|")
     
 # TOP : # $ % @ 0 + ^ V * < :
-def test(SCORE="100",SIZE=4,CHAR="#"):
+def test(SCORE,SIZE,CHAR="#"):
     SCORE = str(SCORE)
     middle = SIZE // 2
     sepBetweenDigits = " "*(SIZE//2)
     sepBetwenChars = " "
 
-    # if (SIZE < 5):
-    #     SIZE = 5 
     length = len(CHAR)
     if length >= middle:
         print(f"len of {CHAR} is too big!")
@@ -51,23 +49,25 @@ def test(SCORE="100",SIZE=4,CHAR="#"):
             S += CHAR[i]
         CHAR = S
         length = len(CHAR)
+    print(f"CHAR:{CHAR},len{length}")
 
     IDoNotKnowHowToNameItButItMeanTheBoldOfResult = 5
     charAmount = SIZE // (length*IDoNotKnowHowToNameItButItMeanTheBoldOfResult)
-    if charAmount != 0: CHAR = CHAR*charAmount
+    if charAmount != 0: 
+        CHAR = CHAR*charAmount
+        print(f"new CHAR:{CHAR}")
+        length = len(CHAR)
 
-    if 0 == 0:
+    s = CHAR * ( SIZE//length )
+    t = SIZE - len(s)
+    for i in range (0,t):
+        s += CHAR[i]
+    # s = (CHAR * ( SIZE//length )) + CHAR[(SIZE - (SIZE//length ) ) :]
 
-        s = CHAR * ( SIZE//length )
-        t = SIZE - len(s)
-        for i in range (0,t):
-            s += CHAR[i]
-        # s = (CHAR * ( SIZE//length )) + CHAR[(SIZE - (SIZE//length ) ) :]
-
-        F = s                                                     # Filled (#####)
-        L = CHAR + sepBetwenChars * (SIZE - (length ))            # Left   (#    )
-        R = sepBetwenChars * (SIZE - length ) + CHAR              # Rght   (    #)
-        E = CHAR + sepBetwenChars * (SIZE - (2*length) ) + CHAR   # Ends   (#   #)
+    F = s                                                     # Filled (#####)
+    L = CHAR + sepBetwenChars * (SIZE - (length ))            # Left   (#    )
+    R = sepBetwenChars * (SIZE - length ) + CHAR              # Rght   (    #)
+    E = CHAR + sepBetwenChars * (SIZE - (2*length) ) + CHAR   # Ends   (#   #)
 
 #
 #   else:
@@ -216,8 +216,12 @@ BOLD = '\033[1m'
 END = '\033[0m' # simple text (stop colourful text)
 
  # TOP 🌀
-char = input("enter some char : ")
 score = input("score :")
+char = input("enter some char [or '=']: ")#str(score)#
+if char.strip() == "=":
+    char = str(score)
+    print("char:",char)
+
 size = int(input("enter size : "))
 
 
