@@ -204,14 +204,15 @@ BOLD = '\033[1m'
 END = '\033[0m' # simple text (stop colourful text)
 
  # TOP 🌀
-# char = input("enter some char : ")
-# size = int(input("enter size : "))
+char = input("enter some char : ")
+score = input("score :")
+size = int(input("enter size : "))
 
 
 # hi = ("✋")
 # print("len c :",sys.getsizeof(hi) - sys.getsizeof(""))
 # console = test(SIZE=8,SCORE="%",CHAR="#")
-console = test(SIZE=15,SCORE="9",CHAR="OSKAR" )
+console = test(SIZE=size,SCORE=score,CHAR=char )
 for line in console:
     print(f"{BOLD}{CORRECT}{line}{END}")
 
