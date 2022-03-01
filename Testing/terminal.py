@@ -1,7 +1,8 @@
 import os
 size = os.get_terminal_size()
+print(size)
 
-
+"""
 printResultScriptName = "printResult.py"
 moduleResultPrinting = (__import__(printResultScriptName[:-3]))
 
@@ -22,3 +23,4 @@ resultArr = moduleResultPrinting.getResult(SCORE)
 
 for i in resultArr:
   print(i)
+"""
