@@ -39,7 +39,7 @@ SCORE = 100
 # console = test(SIZE=8,SCORE="%",CHAR="#")
 
 
-t1 = size.columns // len(str(SCORE))
+t1 = size.lines // len(str(SCORE))
 print(t1)
 
 console = moduleResultPrinting.test(SIZE=t1,SCORE=SCORE,CHAR=str(SCORE) )
