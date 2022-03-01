@@ -33,7 +33,7 @@ print(size)
 printResultScriptName = "test.py"
 moduleResultPrinting = (__import__(printResultScriptName[:-3]))
 
-SCORE = 100
+SCORE = 2478
 #hi = ("✋")
 # print("len c :",sys.getsizeof(hi) - sys.getsizeof(""))
 # console = test(SIZE=8,SCORE="%",CHAR="#")
