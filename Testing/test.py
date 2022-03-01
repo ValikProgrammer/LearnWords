@@ -206,7 +206,7 @@ def test(SCORE,SIZE,CHAR="#"):
                         index = 3
                     console[i] += ((SYMBOLS[digit][index]) + sepBetweenDigits)
     return console
-
+"""
 INCORRECT = '\033[31m' # red
 CORRECT = '\033[32m' # green
 WARNING = '\033[33m'#'\033[33m' # orange
@@ -265,6 +265,10 @@ for line in console:
 # print("========")
 # for el in arr2 :
 #     print(f"{el} | {sys.getsizeof(el)}")
+
+
+
+"""
 
 
 
