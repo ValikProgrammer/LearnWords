@@ -1,3 +1,21 @@
+
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
+
+clearConsole()
+
+
+
+
+
+
+
+
+
+
 INCORRECT = '\033[31m' # red
 CORRECT = '\033[32m' # green
 WARNING = '\033[33m'#'\033[33m' # orange
@@ -22,6 +40,7 @@ SCORE = 100
 
 
 t1 = size.columns // len(str(SCORE))
+print(t1)
 
 console = moduleResultPrinting.test(SIZE=t1,SCORE=SCORE,CHAR=str(SCORE) )
 for line in console:
