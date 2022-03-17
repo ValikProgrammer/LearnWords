@@ -56,6 +56,13 @@ def charThatNotEquals (s1,s2) :
   #print(s1,s1,''.join(arr)  )
   return ''.join(arr) 
 
+def compare_test(s1,s2):
+    arr = []
+    for i in range (0 , min( len(s1),len(s2)  )):
+        if  ( s1[i] != s2[i]):
+            arr.append(i)
+    return arr # array of indexes
+
 def compare (programmTranslation,userTranslation):
   if type(programmTranslation) != list : programmTranslation = [programmTranslation]
   
@@ -86,7 +93,20 @@ def compare (programmTranslation,userTranslation):
           if (charThatNotEquals(arrProgrammTranslation[0],arrProgrammTranslation[2]) == arrUserTranslation[2] or arrProgrammTranslation[2] == arrUserTranslation[2]):
             return correctAnswer
 
-  return incorrectAnswer
+  arr_test = compare_test(programmTranslation,userTranslation)
+  string_test = ""
+  print(arr_test)
+
+  for i in range (0,len(programmTranslation)):
+    if i in arr_test:
+        print("in arr",i)
+        string_test +=INCORRECT + programmTranslation[i] +END
+    else:
+        string_test += programmTranslation[i]
+  if string_test == "":
+    string_test = programmTranslation
+  print(string_test)    
+  return string_test
 
 def showResult(i,m):
   moduleResultPrinting = (__import__(PRINT_RESULT_SCRIPT_PATH[:-3]))
