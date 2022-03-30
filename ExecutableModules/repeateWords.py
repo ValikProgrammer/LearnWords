@@ -133,8 +133,8 @@ def main() :
         break;
     # word and translation
     index = arrIndex[i]
-    programmWord = keys[index]
-    programmTranslation = dictionary[programmWord]
+    programmWord = keys[index].strip()
+    programmTranslation = dictionary[programmWord].strip()
 
     userTranslation = str(input(f"\n{BLUE}{i+1}.{END}{programmWord.capitalize()} : ")).strip()
 
