@@ -1,6 +1,7 @@
 import os
 import sys
 import random
+from prettytable import PrettyTable
 from CONSTANTS import *
 
 
@@ -11,6 +12,8 @@ arrOptions = [ # options for servey at the end of the dictionary
   "Choose another dictionary",
   "STOP and EXIT"
 ] 
+
+mistakesArr = []
 
 
 # #===========FUNCTIONS==================
@@ -88,7 +91,7 @@ def compare (programmTranslation,userTranslation):
 
   return incorrectAnswer
 
-def showResult(i,m):
+def showResult(i,m,arr):
   moduleResultPrinting = (__import__(PRINT_RESULT_SCRIPT_PATH[:-3]))
   SCORE = round(( (i-m)/i )*100)
   console = moduleResultPrinting.getResult(SCORE)
@@ -96,7 +99,16 @@ def showResult(i,m):
       print(f"{BLUE}{line}{END}")
   print("WORDS     MISTAKES   CORRECT")
   print(f"  {BLUE}{i:<3}        {m:<3}       {i-m:<3}{END}")
-  print("="*30)
+  if (arr != []) :
+    print("Your mistakes:")
+    x = PrettyTable()   
+    x.field_names = ["Question", "Correct Answer", "Your Answer"]
+    
+
+    for line in arr:
+      x.add_row(line)
+    print(x)
+  # print("="*30)
   
 # def getWordsAndTraslation():
 #   pass
@@ -114,7 +126,7 @@ def main() :
   while True :
   # servey
     if (i == len(keys)) :
-      showResult(i,mistakesAmount)
+      showResult(i,mistakesAmount,mistakesArr)
       print("You have repeated all words in a dictionary !\n")
       
       for i in range(0,len(arrOptions)) :
@@ -148,6 +160,8 @@ def main() :
     # костыль хаххахаххха
     if (res[6] == "E"):
       mistakesAmount+=1
+      mistakesArr.append([programmWord,f"{CORRECT}{f'{END}/{CORRECT}'.join(programmTranslation)} {END}",f"{INCORRECT}{userTranslation}{END}"])
+      
     i+=1
 
 
