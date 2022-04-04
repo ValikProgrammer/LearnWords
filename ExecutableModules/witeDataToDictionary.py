@@ -30,7 +30,7 @@ def writeData(dict,data):
 
 
 def getData() :
-  question = input(f"\n{WARNING}Question{END} : ").strip()
+  question = input(f"\n{WARNING}Question{END} : ").replace("’" , "'").strip() # .replace("’" , "'") как в dance to one's tune
   if (question == "STOP"):
     return ["STOP"]
   elif (question == "OTHER"):
@@ -38,7 +38,9 @@ def getData() :
   num = int(input("how many answers will you type [number]: "))
   answers = []
   for i in range (0,num):
-    answers.append(input(f"{WARNING}Answer {i+1} {END} : ").strip())
+    answr = input(f"{WARNING}Answer {i+1} {END} : ").replace("'" , '"').replace("'" , '"').replace("’" , "'").strip()
+    answers.append(answr)
+
   return [question,answers] # lower() не надо
 
 
