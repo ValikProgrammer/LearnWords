@@ -212,11 +212,15 @@ def test(SCORE,SIZE,CHAR="#"):
 
 G = '\033[32m' # green
 E = '\033[0m' # simple text (stop colourful text)
-"""u'\u2586'"""
+BOLD = '\033[1m'
 
-for i in test(CHAR=u'\u2586' ,SIZE=7,SCORE="123"): 
-    print(f"{G}{i}{E}")
+# """u'\u2586'"""
 
+# for i in test(CHAR=u'\u2586' ,SIZE=7,SCORE="123"): 
+#     print(f"{G}{i}{E}")
+
+for i in test(CHAR="2!" ,SIZE=7,SCORE="2"): 
+    print(f"{BOLD}{i}")
 
 """
 INCORRECT = '\033[31m' # red
