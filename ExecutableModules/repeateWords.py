@@ -1,8 +1,11 @@
 import os
 import sys
 import random
+from datetime import datetime
 from prettytable import PrettyTable
 from CONSTANTS import *
+
+
 
 
 _, _, arrDictionaries = next(os.walk(DICTIONARIES_PATH))
@@ -20,14 +23,14 @@ mistakesArr = []
 # ##======STARTING SMTH==================
 def newDictionary():
   global arrDictionaries
-  print(f"{BLUE}Available Dictionaries : {END}")
+  # print(f"{BLUE}Available Dictionaries : {END}")
 
-  for i in range(0,len(arrDictionaries)) :
-    print(f"\t[{WARNING}{i}{END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
+  # for i in range(0,len(arrDictionaries)) :
+  #   print(f"\t[{WARNING}{i}{END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
 
-  num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: {WARNING}"))
-  print(f"{END}")
- 
+  # num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: {WARNING}"))
+  # print(f"{END}")
+  num = 3
   module = __import__(arrDictionaries[num][:-3])
   dictionary =  module.getDictionary()
   
@@ -91,14 +94,11 @@ def compare (programmTranslation,userTranslation):
 
   return incorrectAnswer
 
-def showResult(i,m,arr):
-  moduleResultPrinting = (__import__(PRINT_RESULT_SCRIPT_PATH[:-3]))
-  SCORE = round(( (i-m)/i )*100)
-  console = moduleResultPrinting.getResult(SCORE)
-  for line in console:
-      print(f"{BLUE}{line}{END}")
-  print("WORDS     MISTAKES   CORRECT")
-  print(f"  {BLUE}{i:<3}        {m:<3}       {i-m:<3}{END}")
+def addDataToFile(file,text):
+    with open(file, "a") as file:
+        file.write(text)
+
+def showResult(i,m,arr,startTime):
   if (arr != []) :
     print("Your mistakes:")
     x = PrettyTable()   
@@ -108,6 +108,22 @@ def showResult(i,m,arr):
     for line in arr:
       x.add_row(line)
     print(x)
+
+  moduleResultPrinting = (__import__(PRINT_RESULT_SCRIPT_PATH[:-3]))
+  SCORE = round(( (i-m)/i )*100)
+  console = moduleResultPrinting.getResult(SCORE)
+  for line in console:
+      print(f"{BLUE}{line}{END}")
+  print("WORDS     MISTAKES   CORRECT")
+  print(f"  {BLUE}{i:<3}        {m:<3}       {i-m:<3}{END}")
+  
+  endTime  = datetime.now()
+  duration = (endTime - startTime)
+  print(f"{WARNING}Duration{END} : {duration}")
+
+  result = f"{datetime.now().strftime('%Y:%m:%d-%H:%M:%S',)} score : {SCORE}% (all:{i} m:{m} cor:{i-m}) | duration : {duration}"
+  addDataToFile("results.log",result)
+
   # print("="*30)
   
 # def getWordsAndTraslation():
@@ -122,17 +138,19 @@ def main() :
     print("This dictionary is empty.Choose anothe one!")
     dictionary = newDictionary()
   i , mistakesAmount , keys , arrIndex = newLoop(dictionary)
+  startTime = datetime.now()
 
   while True :
   # servey
     if (i == len(keys)) :
-      showResult(i,mistakesAmount,mistakesArr)
+      showResult(i,mistakesAmount,mistakesArr,startTime)
       print("You have repeated all words in a dictionary !\n")
       
-      for i in range(0,len(arrOptions)) :
-        print(f"\t[{WARNING}{i}{END}] : {arrOptions[i]}")
-      choose = int(input(f"Choose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : {WARNING}"))
-      print(f"{END}")
+      # for i in range(0,len(arrOptions)) :
+      #   print(f"\t[{WARNING}{i}{END}] : {arrOptions[i]}")
+      # choose = int(input(f"Choose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : {WARNING}"))
+      # print(f"{END}")
+      choose = 0
       if (choose == 0):
         i , mistakesAmount , keys , arrIndex = newLoop(dictionary)
       elif(choose == 1):
@@ -152,7 +170,7 @@ def main() :
 
     if (userTranslation == "STOP"):
       if (i != 0 ): # if i == 0 we will have mistake in showResult() named "division by zero"
-        showResult(i,mistakesAmount)
+        showResult(i,mistakesAmount,mistakesArr,startTime)
       break;
 
     res = compare(programmTranslation,userTranslation.lower())

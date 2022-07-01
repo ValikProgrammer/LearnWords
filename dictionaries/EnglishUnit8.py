@@ -1,4 +1,3 @@
-# token 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
 def getDictionary() :
     return {
       "сорванец" : ['tomboyish'],
@@ -30,3 +29,4 @@ def getDictionary() :
       "неожиданные повороты" : ['unexpected twists', 'twists'],
       "шедевр" : ['masterpiece'],
     }
+
