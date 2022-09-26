@@ -23,14 +23,14 @@ mistakesArr = []
 # ##======STARTING SMTH==================
 def newDictionary():
   global arrDictionaries
-  # print(f"{BLUE}Available Dictionaries : {END}")
+  print(f"{BLUE}Available Dictionaries : {END}")
 
-  # for i in range(0,len(arrDictionaries)) :
-  #   print(f"\t[{WARNING}{i}{END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
+  for i in range(0,len(arrDictionaries)) :
+    print(f"\t[{WARNING}{i}{END}] : {arrDictionaries[i][:-3]}") # [:-3] - we need to delete ".py"
 
-  # num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: {WARNING}"))
-  # print(f"{END}")
-  num = 3
+  num = int(input(f"\nChoose the dictionary. Press the number[{WARNING}0{END}-{WARNING}{len(arrDictionaries)-1}{END}]: {WARNING}"))
+  print(f"{END}")
+  # num = 3
   module = __import__(arrDictionaries[num][:-3])
   dictionary =  module.getDictionary()
   
@@ -146,11 +146,11 @@ def main() :
       showResult(i,mistakesAmount,mistakesArr,startTime)
       print("You have repeated all words in a dictionary !\n")
       
-      # for i in range(0,len(arrOptions)) :
-      #   print(f"\t[{WARNING}{i}{END}] : {arrOptions[i]}")
-      # choose = int(input(f"Choose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : {WARNING}"))
-      # print(f"{END}")
-      choose = 0
+      for i in range(0,len(arrOptions)) :
+        print(f"\t[{WARNING}{i}{END}] : {arrOptions[i]}")
+      choose = int(input(f"Choose the option.Press the number[{WARNING}0{END}-{WARNING}{len(arrOptions)-1}{END}] : {WARNING}"))
+      print(f"{END}")
+      # choose = 0
       if (choose == 0):
         i , mistakesAmount , keys , arrIndex = newLoop(dictionary)
       elif(choose == 1):
