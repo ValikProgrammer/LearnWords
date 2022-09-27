@@ -121,7 +121,7 @@ def showResult(i,m,arr,startTime):
   duration = (endTime - startTime)
   print(f"{WARNING}Duration{END} : {duration}")
 
-  result = f"{datetime.now().strftime('%Y:%m:%d-%H:%M:%S',)} score : {SCORE}% (all:{i} m:{m} cor:{i-m}) | duration : {duration}"
+  result = f"{datetime.now().strftime('%Y:%m:%d-%H:%M:%S',)} score : {SCORE}% (all:{i} m:{m} cor:{i-m}) | duration : {duration}\n\n"
   addDataToFile("results.log",result)
 
   # print("="*30)
