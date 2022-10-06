@@ -1,7 +1,7 @@
 # Get started
 ```bash
 git clone https://github.com/ValikProgrammer/LearnWords
-cd LearnWords
+cd LearnWords/console
 python3 main.py
 ```
 # APP LEARN WORDS

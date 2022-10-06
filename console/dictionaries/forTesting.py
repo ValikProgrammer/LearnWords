@@ -17,4 +17,6 @@ def getDictionary() :
       "dfcdsf" : ['asdcsc'],
       "sdas" : ['sadcs'],
       "asdfas" : ['adsa', 'asd'],
+      "123" : ['1'],
+      "1241424124" : ['123124', '123143124'],
     }
