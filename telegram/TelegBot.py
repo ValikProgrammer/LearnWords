@@ -3,6 +3,9 @@ from conf import *
 
 @dp.message_handler(commands=['s','start',"on"])
 async def start_cmd_handler(message: types.Message):
+    if (message.from_user.username is None) :
+        logging.info(f"Username is **null** : id {message.from_user.id}")
+
     keyboard_markup = types.InlineKeyboardMarkup(row_width=3)
     text_and_data = [
         ('Repeate Words', 'repeate'),
@@ -63,7 +66,7 @@ async def doNotUnderstand(message: types.Message):
 
 
 def main():
-    logging.info("main func teleg bot . stating script")
+    logging.info("Stating script(main func Telebot.py)")
     # add all folders to the system path
     path, dirs, files = next(os.walk(PATH))
     for i in range (0,len(dirs)):

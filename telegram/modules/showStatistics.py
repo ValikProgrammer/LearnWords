@@ -10,7 +10,7 @@ def average(scors):
 
 
 async def userStatFunc(id):
-    logging.info("Sending user statisctics.")
+    logging.info(f"Sending user statistics.(for {id})")
 
     userStatDict1 = getDataFromJson(STATISTICS_USER_SCORE)
     userStatDict = {k: v for k, v in sorted(userStatDict1.items(), key=lambda item: item[1],reverse=True)}
@@ -19,14 +19,13 @@ async def userStatFunc(id):
     maxLenUserName  = 0
     for k in userStatDict.keys():
         maxLenUserName = max(maxLenUserName,len(k))
-
     for user,scors in userStatDict.items():
             userStat += f"<code><b>{user:<{maxLenUserName}}</b></code> : {average(scors)}%\n"
 
     await bot.send_message(id,userStat)
 
 async def dictStatFunc(id):
-    logging.info("Sending dict statisctics.")
+    logging.info(f"Sending dict statistics.(for {id})")
 
     dictStatDict1 = getDataFromJson(STATISTICS_DICT)
     dictStatDict = {k: v for k, v in sorted(dictStatDict1.items(), key=lambda item: item[1],reverse=True)}
@@ -35,9 +34,11 @@ async def dictStatFunc(id):
     maxLenDictName  = 0
     for k in dictStatDict.keys():
         maxLenDictName = max(maxLenDictName,len(k))
-
     for dictName,amount in dictStatDict.items():
         dictStat += f"<code><b>{dictName:<{maxLenDictName}}</b></code>  : {amount}\n"
+
+    if maxLenDictName == 0 : # it means that we don't have dictionary statistics.
+        dictStat += f"<code>NO STATISTICS. Repeat dictionary to start the statistics.</code>"
 
     await bot.send_message(id,dictStat)
 
@@ -46,7 +47,7 @@ async def dictStatFunc(id):
 
 
 async def main(id):
-    keyboard_markup = types.InlineKeyboardMarkup(row_width=2)
+    keyboard_markup = types.InlineKeyboardMarkup(row_width=3)
     text_and_data = [
         ('Dict Rating', 'dictrating'),
         ('User Rating', 'userrating'),

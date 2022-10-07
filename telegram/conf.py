@@ -1,10 +1,11 @@
-import coloredlogs
-coloredlogs.install()#(format="%(asctime)s %(levelname)-8s  %(message)s (%(filename)s %(funcName)s :%(lineno)s)")
-
 import logging
 import logging.config
 import json
-
+import os
+import sys
+from datetime import datetime
+import coloredlogs
+coloredlogs.install()#(format="%(asctime)s %(levelname)-8s  %(message)s (%(filename)s %(funcName)s :%(lineno)s)")
 
 import aiogram.utils.markdown as md
 from aiogram import Bot, Dispatcher, types
@@ -53,15 +54,16 @@ def writeDataToJson(file,dict):
 def getDataFromJson(file):
     with open(file, "r") as file:
         text = file.read()
-    return json.loads(text)
+    try:
+        return json.loads(text)
+    except :
+        return {}
 
 
 
 
 
 
-import os
-import sys
 
 PATH = os.getcwd() # path to main.py
 PRINT_RESULT_SCRIPT_PATH = "printResult.py"
@@ -73,6 +75,7 @@ RESULT_LOG_SCRIPT_PATH = "statistics/results.log"
 STATISTICS_DICT = "statistics/dict.json"
 STATISTICS_USER_SCORE = "statistics/user_score.json"
 SHOW_STATISTICS = "showStatistics.py"
+STATISTICS_ID_USERNAME="statistics/id_username.json"
 
 INCORRECT = '\033[31m' # red
 CORRECT = '\033[32m' # green

@@ -8,3 +8,483 @@ correct:2
 duration : 0:00:05
 dictionary:test.json
 
+ID:785367302
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-19:03:17</b> 
+score : <b>24%</b>
+all:17 
+mistakes:13 
+correct:4 
+duration : 0:22:09
+dictionary:English[9-1-2]Part.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:04:50</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2(['1', '2']) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:12:42</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': "1 (['65%', '65'])", 'уровень урбанизации украины': "2 (['70%', '70'])"}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:18:24</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': "1 (['70%', '70'])", 'уровень урбанизации польши': "2 (['65%', '65'])"}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:20:04</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': "1 (['65%', '65'])", 'уровень урбанизации украины': "2 (['70%', '70'])"}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:21:26</b> 
+score : <b>50%</b>
+all:2 
+mistakes:1({'уровень урбанизации украины': '2 (70%--70)'}) 
+correct:1 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:22:09</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (70)', 'уровень урбанизации польши': '2 (65%--65)'}) 
+correct:0 
+duration : 0:00:03
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:23:47</b> 
+score : <b>50%</b>
+all:2 
+mistakes:1({'уровень урбанизации польши': '1 (<b>65%/65</b>)'}) 
+correct:1 
+duration : 0:00:05
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:24:20</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%/65</b>)', 'уровень урбанизации украины': '2 (<b>70</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:24:53</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%/ 65</b>)', 'уровень урбанизации украины': '2 (<b>70</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:25:20</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>70</b>)', 'уровень урбанизации польши': '2 (<b>65/65%</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:26:07</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code>/</code>65</b>)', 'уровень урбанизации украины': '2 (<b>70</b>)'}) 
+correct:0 
+duration : 0:00:04
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:26:41</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>70</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><i><b>/<b></i></code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:27:06</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><i><b>/</b></i></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><i><b>/</b></i></code>0</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:27:48</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>70</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:30:33</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>70</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:31:19</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>70</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:785367302
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:40:19</b> 
+score : <b>18%</b>
+all:17 
+mistakes:14({'стоять у кого-либо на пути': "в (<b>get in the way<code><b>/</b></code>to get in someone's way</b>)", 'ожидается, что кто-либо ...': 'в (<b>be supposed (to do)<code><b>/</b></code>be supposed<code><b>/</b></code>supposed</b>)', 'отпустить': 'в (<b>to let go<code><b>/</b></code>let go</b>)', 'выявлять, выводить на поверх-ность': 'в (<b>bring out</b>)', 'крутиться и вертеться': 'в (<b>toss and turn</b>)', 'лелеять,беспокоиться об ком-то': 'в (<b>cherish</b>)', 'поддерживать': 'в (<b>hold up<code><b>/</b></code>hold</b>)', 'упражняться,отрабатывать': 'в (<b>work out</b>)', 'испытывать проблемы': 'в (<b>face problems</b>)', 'смотреть вперед': 'в (<b>look ahead<code><b>/</b></code>to look ahead</b>)', 'долго думать': 'в (<b>dwell on<code><b>/</b></code>dwell</b>)', 'рассчитывать на': 'в (<b>count on<code><b>/</b></code>count</b>)', 'подвести': 'в (<b>let down</b>)', 'напомнить': 'в (<b>r<code><b>/</b></code>e<code><b>/</b></code>m<code><b>/</b></code>i<code><b>/</b></code>n<code><b>/</b></code>d</b>)'}) 
+correct:3 
+duration : 0:00:06
+dictionary:English[9-1-2]Part.json
+
+ID:785367302
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:43:51</b> 
+score : <b>12%</b>
+all:17 
+mistakes:15({'упражняться,отрабатывать': 'sdf (<b>work out</b>)', 'оглядываться назад': 'sdf (<b>look back</b>)', 'стоять у кого-либо на пути': "sd (<b>get in the way<code><b>/</b></code>to get in someone's way</b>)", 'лелеять,беспокоиться об ком-то': 'f (<b>c<code><b>/</b></code>h<code><b>/</b></code>e<code><b>/</b></code>r<code><b>/</b></code>i<code><b>/</b></code>s<code><b>/</b></code>h</b>)', 'крутиться и вертеться': 'sdf (<b>toss and turn</b>)', 'ожидается, что кто-либо ...': 'sdf (<b>be supposed (to do)<code><b>/</b></code>be supposed<code><b>/</b></code>supposed</b>)', 'смотреть вперед': 'sd (<b>look ahead<code><b>/</b></code>to look ahead</b>)', 'отпустить': 's (<b>to let go<code><b>/</b></code>let go</b>)', 'выявлять, выводить на поверх-ность': 's (<b>bring out</b>)', 'поддерживать': 's (<b>hold up<code><b>/</b></code>hold</b>)', 'подвести': 's (<b>let down</b>)', 'тонуть, отчаиваться': 's (<b>g<code><b>/</b></code>o<code><b>/</b></code> <code><b>/</b></code>d<code><b>/</b></code>o<code><b>/</b></code>w<code><b>/</b></code>n</b>)', 'долго думать': 's (<b>dwell on<code><b>/</b></code>dwell</b>)', 'напомнить': 's (<b>r<code><b>/</b></code>e<code><b>/</b></code>m<code><b>/</b></code>i<code><b>/</b></code>n<code><b>/</b></code>d</b>)', 'рассчитывать на': 's (<b>count on<code><b>/</b></code>count</b>)'}) 
+correct:2 
+duration : 0:00:05
+dictionary:English[9-1-2]Part.json
+
+ID:785367302
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-22:45:20</b> 
+score : <b>18%</b>
+all:17 
+mistakes:14({'долго думать': 'ыва (<b>dwell on<code><b>/</b></code>dwell</b>)', 'испытывать проблемы': 'ыва (<b>f<code><b>/</b></code>a<code><b>/</b></code>c<code><b>/</b></code>e<code><b>/</b></code> <code><b>/</b></code>p<code><b>/</b></code>r<code><b>/</b></code>o<code><b>/</b></code>b<code><b>/</b></code>l<code><b>/</b></code>e<code><b>/</b></code>m<code><b>/</b></code>s</b>)', 'тонуть, отчаиваться': 'ыва (<b>g<code><b>/</b></code>o<code><b>/</b></code> <code><b>/</b></code>d<code><b>/</b></code>o<code><b>/</b></code>w<code><b>/</b></code>n</b>)', 'упражняться,отрабатывать': 'ы (<b>w<code><b>/</b></code>o<code><b>/</b></code>r<code><b>/</b></code>k<code><b>/</b></code> <code><b>/</b></code>o<code><b>/</b></code>u<code><b>/</b></code>t</b>)', 'лелеять,беспокоиться об ком-то': 'ва (<b>cherish</b>)', 'плечо, чтобы плакать': 'ы (<b>a shoulder to cry on<code><b>/</b></code>shoulder to cry on<code><b>/</b></code>shoulder to cry<code><b>/</b></code>shoulder</b>)', 'оглядываться назад': 'ыв (<b>look back</b>)', 'поддерживать': 'а (<b>hold up<code><b>/</b></code>hold</b>)', 'ожидается, что кто-либо ...': 'ыв (<b>be supposed (to do)<code><b>/</b></code>be supposed<code><b>/</b></code>supposed</b>)', 'рассчитывать на': 'а (<b>count on<code><b>/</b></code>count</b>)', 'крутиться и вертеться': 'ы (<b>toss and turn</b>)', 'отпустить': 'а (<b>to let go<code><b>/</b></code>let go</b>)', 'выявлять, выводить на поверх-ность': 'ы (<b>bring out</b>)', 'напомнить': 'а (<b>r<code><b>/</b></code>e<code><b>/</b></code>m<code><b>/</b></code>i<code><b>/</b></code>n<code><b>/</b></code>d</b>)'}) 
+correct:3 
+duration : 0:00:04
+dictionary:English[9-1-2]Part.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-23:56:35</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>70</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:18
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:06-23:59:23</b> 
+score : <b>100%</b>
+all:17 
+mistakes:0({}) 
+correct:17 
+duration : 0:02:35
+dictionary:English[9-1-2]Part.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-09:58:14</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-09:58:47</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:01:00</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code><b>/</b></code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:02:28</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:03:16</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:00
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:04:00</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code><b>/</b></code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:04:43</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code><b>/</b></code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:05:42</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code><b>/</b></code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:18:55</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:19:12</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code><b>/</b></code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:19:50</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:21:47</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:22:03</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:22:29</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code><b>/</b></code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:24:54</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:26:11</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:26:39</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:26:52</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:04
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:28:12</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code><b>/</b></code>65</b>)', 'уровень урбанизации украины': '2 (<b>7<code><b>/</b></code>0</b>)'}) 
+correct:0 
+duration : 0:00:03
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:28:49</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code><b>/</b></code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code><b>/</b></code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:29:32</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code>/</code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code>/</code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:30:12</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>7<code>/</code>0</b>)', 'уровень урбанизации польши': '2 (<b>65%<code>/</code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:31:02</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code>/</code>65</b>)', 'уровень урбанизации украины': '2 (<b>1<code>/</code>2<code>/</code>3<code>/</code>4<code>/</code>5<code>/</code>6<code>/</code>7<code>/</code>8<code>/</code>9</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:33:32</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '123456789', 'уровень урбанизации польши': '2 (<b>65%<code>/</code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:34:31</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code>/</code>65</b>)', 'уровень урбанизации украины': '2 (<b>123456789</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-10:40:55</b> 
+score : <b>94%</b>
+all:17 
+mistakes:1({'тонуть, отчаиваться': 'go wond (<b>go down</b>)'}) 
+correct:16 
+duration : 0:01:23
+dictionary:English[9-1-2]Part.json
+

@@ -1,8 +1,3 @@
-import os
-import sys
-import random
-from datetime import datetime
-from prettytable import PrettyTable
 from conf import * #bot , dp
 
 
@@ -28,26 +23,26 @@ class myWord:
 
 
 
-  def compare (self,id,userTranslation):
+  def compare (self,programmTranslation,userTranslation):
     userTranslation = userTranslation.lower().strip()
-    if type(self.programmTranslation) != list : 
-      self.programmTranslation = [self.programmTranslation]
+    if type(programmTranslation) != list : 
+      programmTranslation = [programmTranslation]
 
-    for progTrans in self.programmTranslation:
+    for progTrans in programmTranslation:
       progTrans = progTrans.lower().strip()
 
       if progTrans == userTranslation: 
         return  {
               "userTrans": userTranslation,
               "correct":True,
-              "msg": f"<b>[OK]</b> <i>{self.programmTranslation[0]}</i>" 
+              "msg": f"<b>[OK]</b> <i>{programmTranslation[0]}</i>" 
           }
 
 
     return  {
       "userTrans": userTranslation,
       "correct":False,
-      "msg": f"<b>[ERROR]</b> <i>{self.programmTranslation[0]}</i>"
+      "msg": f"<b>[ERROR]</b> <i>{programmTranslation[0]}</i>"
       }
 
 
@@ -88,28 +83,8 @@ class myDict:
 
 
 class myStatistics:
-  def userStatistics(self):
-    logging.info("refreshing user statistics")
-    dict = getDataFromJson(STATISTICS_USER_SCORE)
-    if (dict.get(self.userName,"NO_USER") == "NO_USER"):
-      dict[self.userName] = [self.score]
-    else:
-      dict[self.userName].append(self.score)
-    writeDataToJson(STATISTICS_USER_SCORE,dict)
-
-  def dictStatistics(self):
-    logging.info("refreshing user statistics")
-    dictName = self.dictName
-    dict = getDataFromJson(STATISTICS_DICT)
-    if (dict.get(dictName,"NO_DICT") == "NO_DICT"):
-      dict[dictName] = 1
-    else:
-      dict[dictName] += 1;
-    writeDataToJson(STATISTICS_DICT,dict)
-  
-
   def __init__(self):
-    self.mistakesArr = []
+    self.mistakesDict = {}
     self.startTime = 0
     self.correct = 0
     self.hasShownResult = 0
@@ -117,32 +92,52 @@ class myStatistics:
     self.dictName = ""
     self.userName = ""
     self.score = ""
-    
+
+  def userStatistics(self):
+    logging.info("refreshing user statistics")
+    dict = getDataFromJson(STATISTICS_USER_SCORE)
+
+    if (self.userName in dict):
+      dict[self.userName].append(self.score)
+    else:
+      dict[self.userName] = [self.score]
+    writeDataToJson(STATISTICS_USER_SCORE,dict)
+
+  def dictStatistics(self):
+    logging.info("refreshing dict statistics")
+    dictName = self.dictName
+    dict = getDataFromJson(STATISTICS_DICT)
+    if (dictName in dict):
+      dict[dictName] += 1
+    else:
+      dict[dictName] = 1
+    writeDataToJson(STATISTICS_DICT,dict)
+
+  def idUsernameStatistics(self,id:int):
+    logging.info("refreshing id_username statistics")
+
+    dict = getDataFromJson(STATISTICS_ID_USERNAME)
+    dict[str(id)] = self.userName or "NO_USERNAME"
+    writeDataToJson(STATISTICS_ID_USERNAME,dict)
+      
   async def showResult(self,id,i):
     dict = globals()[f"dict{id}"]
-    m = len(self.mistakesArr)
+    m = len(self.mistakesDict)
     SCORE = round(( (i-m)/i )*100)
     self.score = SCORE
-
-
-    endTime  = datetime.now()
-    duration = (endTime - self.startTime)
+    duration = (datetime.now() - self.startTime)
     
-    result = f"ID:{id}\n<b><i>YOUR RESULTS:</i></b>\n<b>{datetime.now().strftime('%Y:%m:%d-%H:%M:%S')}</b> \nscore : <b>{SCORE}%</b>\nall:{i} \nmistakes:{m} \ncorrect:{i-m} \nduration : {str(duration)[:-7]}\ndictionary:{dict.dictName}"
+    result = f"ID:{id}\n<b><i>YOUR RESULTS:</i></b>\n<b>{datetime.now().strftime('%Y:%m:%d-%H:%M:%S')}</b> \nscore : <b>{SCORE}%</b>\nall:{i} \nmistakes:{m}({self.mistakesDict}) \ncorrect:{i-m} \nduration : {str(duration)[:-7]}\ndictionary:{dict.dictName}"
     print(result,"\n")
     addDataToFile(RESULT_LOG_SCRIPT_PATH,result+"\n\n")
     
     moduleResultPrinting = (__import__(PRINT_RESULT_SCRIPT_PATH[:-3]))
     console = "\n".join(moduleResultPrinting.getResult(SCORE))
 
-    await bot.send_message(id,"YOUR MISTAKES :\n"+'\n'.join(self.mistakesArr))
+    await bot.send_message(id,"<b>YOUR MISTAKES</b> :\n"+'\n'.join( [f"{k} - {v}" for k ,v in self.mistakesDict.items()] ))
     await bot.send_message(id,f"WORDS     MISTAKES   CORRECT\n      <b>{i:<8}           {m:<3}             {i-m:<3}</b>\nDuration: <b>{str(duration)[:-7]}</b>")
     await bot.send_message(id,f"<code>{console}</code>")
     
-
-
-      
-
 
 
 
@@ -156,8 +151,8 @@ async def start(call:types.CallbackQuery):
     stat.dictName = call.data
 
     dict.loadDict(call.data)
-    await bot.send_message(call.from_user.id,f"Your dict is <i>{call.data[:-6]}</i>")
-    await bot.send_message(call.from_user.id,f"Amount of all words:<b>{len(dict.keys)}</b>")
+    await bot.send_message(call.from_user.id,f"Your dict is <b>{call.data[:-5]}</b>")
+    await bot.send_message(call.from_user.id,f"Amount of all words:<b><code>{len(dict.keys)}</code></b>")
 
     stat = globals()[f"stat{call.from_user.id}"]
     stat.startTime = datetime.now()
@@ -169,19 +164,23 @@ async def start(call:types.CallbackQuery):
 
 
 @dp.message_handler()
-async def checkPair(message:types.Message,state: FSMContext):
+async def checkPair(message:types.Message):
 
   stat = globals()[f"stat{message.from_user.id}"]
   word = globals()[f"word{message.from_user.id}"]
   dict = globals()[f"dict{message.from_user.id}"]
   if dict.haveChosenDict:
     if (stat.hasShownResult != 1):
-      resp = word.compare(id,message.text)
+      resp = word.compare(word.programmTranslation,message.text)
       await bot.send_message(message.from_user.id,resp["msg"])
       if resp["correct"]:
         stat.correct += 1
       else:
-        stat.mistakesArr.append(resp["userTrans"])
+        if type(word.programmTranslation) == list:
+          progTransForMistakes = f'{resp["userTrans"]} (<b>{"<code>/</code>".join(word.programmTranslation)}</b>)'
+        else:
+          progTransForMistakes = f'{resp["userTrans"]} (<b>{word.programmTranslation}</b>)'
+        stat.mistakesDict[word.programmWord] = progTransForMistakes
 
     if (dict.i != len(dict.keys)):
       await word.newPair(message.from_user.id)
@@ -190,20 +189,12 @@ async def checkPair(message:types.Message,state: FSMContext):
           stat.hasShownResult  = 1
           await message.reply("You have repeated all words ! ")
           await stat.showResult(message.from_user.id,dict.i)
-          stat.userName = message.from_user.username
+          stat.userName = message.from_user.username or (str(message.from_user.id)+"(no UserName)")
           stat.userStatistics()
           stat.dictStatistics()
-          # await stat.user
-          
+          stat.idUsernameStatistics(message.from_user.id)
       else:
         await message.reply("You have repeated all words. Start bot againg : /start")
-        # executor.stop_poll()
-        # from TelegBot import main
-        # import importlib
-
-        # # t = __import__(WRITE_DATA_SCRIPT_PATH[:-3])
-        # importlib.reload(TelegBot)
-        # from TelegBot import main
   else:
     await message.reply("You should press the button :) If you want to get out - start the bot againg: /start")
     await dict.showAvaibleDictionaries(message.from_user.id)

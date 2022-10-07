@@ -31,7 +31,7 @@ async def showAvaibleDictionaries(id):
   keyboard_markup = types.InlineKeyboardMarkup(row_width=1)
 
   for dictName in arrDictionaries:
-    button =  types.InlineKeyboardButton(dictName[:-5],callback_data=dictName)
+    button =  types.InlineKeyboardButton(dictName[:-4],callback_data=dictName)
     keyboard_markup.add(button)
 
   await bot.send_message(id,"ChooseDictionary:", reply_markup=keyboard_markup)
@@ -78,7 +78,7 @@ async def showResult(id,i,arr,startTime):
   endTime  = datetime.now()
   duration = (endTime - startTime)
 
-  result = f"<b><i>YOUR RESULTS:</i></b>\n<b>{datetime.now().strftime('%Y:%m:%d-%H:%M:%S')}</b> \nscore : <b>{SCORE}%</b>\nall:{i} \nmistakes:{m} \ncorrect:{i-m} \nduration : {str(duration)[:-7]}\n"
+  result = f"<b><i>YOUR RESULTS:</i></b>\n<b>{datetime.now().strftime('%Y:%m:%d-%H:%M:%S')}</b> \nscore : <b>{SCORE}%</b>\nall:{i} \nmistakes:{m}({mista}) \ncorrect:{i-m} \nduration : {str(duration)[:-7]}\n"
   await bot.send_message(id, result)
   print("\n",result,"\n")
 
