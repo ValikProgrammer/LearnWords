@@ -1,5 +1,6 @@
 # @LearnWordsValikbot
 from conf import *
+import keep_alive as ka
 
 @dp.message_handler(commands=['s','start',"on"])
 async def start_cmd_handler(message: types.Message):
@@ -76,5 +77,6 @@ def main():
 
 
 if __name__ == '__main__':
+    keep_alive()
     main()
 

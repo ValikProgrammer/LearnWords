@@ -24,7 +24,7 @@ from aiogram.utils import executor
 # logging.config.fileConfig('logging.conf')
 # logging.basicConfig(format="%(asctime)s %(levelname)-8s  %(message)s (%(filename)s %(funcName)s :%(lineno)s)",level=logging.INFO)
 
-API_TOKEN = '5752216179:AAHPlpXp5RHexs8L-rvTcDHWD8p-TPcvwVI'
+API_TOKEN = os.environ.get("API_TOKEN")
 
 
 bot = Bot(token=API_TOKEN,parse_mode=types.ParseMode.HTML)
@@ -85,3 +85,22 @@ BLUE = '\033[35m' # blue
 UNDERLINED = '\033[4m'
 BOLD = '\033[1m'
 END = '\033[0m' # simple text (stop colourful text)
+
+
+
+
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def main():
+  return "Your bot is alive!"
+
+def run():
+    app.run(host="0.0.0.0", port=8080)
+
+def keep_alive():
+    server = Thread(target=run)
+    server.start()

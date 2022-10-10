@@ -518,3 +518,23 @@ correct:15
 duration : 0:01:53
 dictionary:English[9-1-2]Part.json
 
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:10-15:19:44</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code>/</code>65</b>)', 'уровень урбанизации украины': '2 (<b>70<code>/</code>70%</b>)'}) 
+correct:0 
+duration : 0:00:02
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:10-15:53:31</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации украины': '1 (<b>70<code>/</code>70%</b>)', 'уровень урбанизации польши': '2 (<b>65%<code>/</code>65</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
