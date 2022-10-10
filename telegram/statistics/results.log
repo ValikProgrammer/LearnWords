@@ -488,3 +488,33 @@ correct:16
 duration : 0:01:23
 dictionary:English[9-1-2]Part.json
 
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-17:27:30</b> 
+score : <b>100%</b>
+all:17 
+mistakes:0({}) 
+correct:17 
+duration : 0:05:02
+dictionary:English[9-1-2]Part.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:07-17:45:41</b> 
+score : <b>100%</b>
+all:17 
+mistakes:0({}) 
+correct:17 
+duration : 0:01:40
+dictionary:English[9-1-2]Part.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:08-10:13:44</b> 
+score : <b>88%</b>
+all:17 
+mistakes:2({'долго думать': 'swell on (<b>dwell on<code>/</code>dwell</b>)', 'стоять у кого-либо на пути': "git in the way (<b>get in the way<code>/</code>to get in someone's way</b>)"}) 
+correct:15 
+duration : 0:01:53
+dictionary:English[9-1-2]Part.json
+
