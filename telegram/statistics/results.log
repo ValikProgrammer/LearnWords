@@ -518,3 +518,43 @@ correct:15
 duration : 0:01:53
 dictionary:English[9-1-2]Part.json
 
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:11-09:03:01</b> 
+score : <b>12%</b>
+all:58 
+mistakes:51({'соседский, по соседству': 'live the next door (<b>(live) next door<code>/</code>next door</b>)', 'верность': 'loyality (<b>loyalty</b>)', 'обзывать': 'call smbd name (<b>call someone names</b>)', 'влюбленность': 'fall in love (<b>crush</b>)', 'умолять, просить': '1\n1q\n1 (<b>plead (with someone)<code>/</code>plead</b>)', 'доставать кого-либо, упрашивать, выпраши-вать': '1 (<b>bug</b>)', 'покрасить волосы (у специалиста)': '11 (<b>have your hair dyed</b>)', 'в равной мере одинаково': '11 (<b>equally</b>)', 'лелеять,беспокоиться об ком-то': '1 (<b>cherish</b>)', 'смотреть вперед': '11 (<b>look ahead</b>)', 'выместить на ком-либо': '1 (<b>take something out on someone<code>/</code>take something out on smbd<code>/</code>take something out on smb<code>/</code>take something out on<code>/</code>take smth out on<code>/</code>take sth out on<code>/</code>take out on<code>/</code>take out</b>)', 'долго думать': '11 (<b>dwell on<code>/</code>dwell</b>)', 'отпускать': '11 (<b>let go</b>)', 'крутиться и вертеться': '1 (<b>toss and turn</b>)', 'напомнить': '1 (<b>remind</b>)', 'выявлять, выводить на поверх-ность': '11 (<b>bring out</b>)', 'плечо, чтобы плакать': '1 (<b>a shoulder to cry on<code>/</code>shoulder to cry on<code>/</code>shoulder to cry<code>/</code>shoulder</b>)', 'забота': '1 (<b>care</b>)', 'пара (о влюбленных или женатых)': '1 (<b>couple</b>)', 'непредвзя-тый, справедливый': '1 (<b>non-judgemental</b>)', 'испытывать проблемы': '11 (<b>face problems</b>)', 'говорить комплименты': '11 (<b>pay compliments</b>)', 'надежный': '11 (<b>reliable</b>)', 'с первого взгляда': '1 (<b>at first sight</b>)', 'юмористический, с юмором': '11 (<b>humorous</b>)', 'издеваться над кем-либо': '1 (<b>pick on someone<code>/</code>pick on<code>/</code>pick on smb</b>)', 'тонуть, отчаиваться': '11 (<b>go down</b>)', 'мятежный, бунтарский': '111 (<b>rebellious</b>)', 'неуважительный': '11 (<b>disrespectful</b>)', 'рассчитывать на': '11 (<b>count on<code>/</code>count</b>)', 'честность': '1 (<b>honesty</b>)', 'поддержка': '11 (<b>support</b>)', '(не)справедливо': '1 (<b>(un)fairly<code>/</code>fairly</b>)', 'огрызаться': '1 (<b>talk back to someone</b>)', 'разлюбить': '1 (<b>fall in love</b>)', 'отпустить': '1 (<b>to let go<code>/</code>let go</b>)', 'разрушитель; тот, кто разрушает, унич-тожает': '1 (<b>buster</b>)', 'заботливый, опекающий': '11 (<b>protective</b>)', 'стоять у кого-либо на пути': "1 (<b>get in the way<code>/</code>to get in someone's way</b>)", 'приют, укрытие': '11 (<b>shelter</b>)', 'исцелять': '11 (<b>heal</b>)', 'умолять': '11 (<b>beg</b>)', 'романтичный, романтический': '1 (<b>romantic</b>)', 'обращаться с; относиться к': '1 (<b>treat</b>)', 'отказаться': '1 (<b>refuse</b>)', 'подвести': '1 (<b>let down</b>)', 'безусловный': '1 (<b>unconditional</b>)', 'существовать': '1 (<b>exist</b>)', 'постоять за себя': '1 (<b>stand for oneself</b>)', 'поддерживать': '1 (<b>hold up<code>/</code>hold</b>)', 'принимать комплименты': '1 (<b>take compliments</b>)'}) 
+correct:7 
+duration : 0:29:37
+dictionary:English[9-1-2]All.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:11-10:34:20</b> 
+score : <b>62%</b>
+all:58 
+mistakes:22({'издеваться над кем-либо': '1 (<b>pick on someone<code>/</code>pick on<code>/</code>pick on smb</b>)', 'мятежный, бунтарский': '1 (<b>rebellious</b>)', 'заботливый, опекающий': 'caring (<b>protective</b>)', 'умолять, просить': '1 (<b>plead (with someone)<code>/</code>plead</b>)', 'говорить комплименты': 'pay complements (<b>pay compliments</b>)', 'ожидается, что кто-либо ...': 'supoosed (<b>be supposed (to do)<code>/</code>be supposed<code>/</code>supposed</b>)', 'в равной мере одинаково': '1 (<b>equally</b>)', 'верность': 'loyality (<b>loyalty</b>)', 'принимать комплименты': 'take complemements (<b>take compliments</b>)', 'соседский, по соседству': 'nex door (<b>(live) next door<code>/</code>next door</b>)', 'доставать кого-либо, упрашивать, выпраши-вать': 'treat (<b>bug</b>)', 'стоять у кого-либо на пути': "get in way (<b>get in the way<code>/</code>to get in someone's way</b>)", 'постоять за себя': 'stand up (<b>stand for oneself</b>)', 'огрызаться': '1 (<b>talk back to someone</b>)', 'обзывать': 'call someones names (<b>call someone names</b>)', 'разлюбить': 'fall out (<b>fall in love</b>)', 'неуважительный': 'unpleasend (<b>disrespectful</b>)', 'непредвзя-тый, справедливый': '1 (<b>non-judgemental</b>)', 'умолять': 'plead (<b>beg</b>)', 'обращаться с; относиться к': '1 (<b>treat</b>)', 'разрушитель; тот, кто разрушает, унич-тожает': '1 (<b>buster</b>)', 'выместить на ком-либо': '1 (<b>take something out on someone<code>/</code>take something out on smbd<code>/</code>take something out on smb<code>/</code>take something out on<code>/</code>take smth out on<code>/</code>take sth out on<code>/</code>take out on<code>/</code>take out</b>)'}) 
+correct:36 
+duration : 0:16:16
+dictionary:English[9-1-2]All.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:11-20:11:35</b> 
+score : <b>0%</b>
+all:2 
+mistakes:2({'уровень урбанизации польши': '1 (<b>65%<code>/</code>65</b>)', 'уровень урбанизации украины': '2 (<b>70<code>/</code>70%</b>)'}) 
+correct:0 
+duration : 0:00:01
+dictionary:test.json
+
+ID:1335226571
+<b><i>YOUR RESULTS:</i></b>
+<b>2022:10:14-18:24:02</b> 
+score : <b>69%</b>
+all:58 
+mistakes:18({'огрызаться': '1 (<b>talk back to someone</b>)', 'постоять за себя': 'stand up (<b>stand for oneself</b>)', 'в равной мере одинаково': '1 (<b>equally</b>)', 'умолять': 'pleas (<b>beg</b>)', 'выместить на ком-либо': 'take to someone (<b>take something out on someone<code>/</code>take something out on smbd<code>/</code>take something out on smb<code>/</code>take something out on<code>/</code>take smth out on<code>/</code>take sth out on<code>/</code>take out on<code>/</code>take out</b>)', 'верность': 'loyality (<b>loyalty</b>)', 'обзывать': 'call someones names (<b>call someone names</b>)', 'влюбленность': '1 (<b>crush</b>)', 'подвести': 'go down (<b>let down</b>)', 'издеваться над кем-либо': '1 (<b>pick on someone<code>/</code>pick on<code>/</code>pick on smb</b>)', 'заботливый, опекающий': 'care (<b>protective</b>)', 'говорить комплименты': 'pay complements (<b>pay compliments</b>)', 'доставать кого-либо, упрашивать, выпраши-вать': '1 (<b>bug</b>)', 'умолять, просить': 'beg (<b>plead (with someone)<code>/</code>plead</b>)', 'крутиться и вертеться': 'tass and turn (<b>toss and turn</b>)', 'непредвзя-тый, справедливый': '1 (<b>non-judgemental</b>)', 'соседский, по соседству': 'live the next door (<b>(live) next door<code>/</code>next door</b>)', 'мятежный, бунтарский': '1 (<b>rebellious</b>)'}) 
+correct:40 
+duration : 0:31:55
+dictionary:English[9-1-2]All.json
+
